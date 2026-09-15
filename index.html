@@ -1,0 +1,1169 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#262427">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="花色纸牌">
+<meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>花色纸牌 · 离线试玩 V3.0</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23152525'/%3E%3Ctext x='32' y='48' text-anchor='middle' font-size='48' fill='%23e5c48b'%3E%E2%99%A6%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#101d1e;--surface:#192c2d;--surface2:#203536;--line:#3b5150;--text:#f3eee2;--muted:#a9bcb4;--gold:#e5c48b;--mint:#b7d9c3;--red:#b54140;--paper:#f6f0e3;--ink:#263837;--radius:16px;font-family:"Segoe UI","Microsoft YaHei",sans-serif;color:var(--text);background:var(--bg);font-size:16px}
+*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:default;opacity:.45}button,input,select,textarea{border:1px solid var(--line);border-radius:9px;color:var(--text);background:var(--surface2)}button{padding:10px 15px;transition:background .15s,border-color .15s}button:hover:not(:disabled){background:#304847;border-color:var(--muted)}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:4px}button.primary{background:var(--gold);color:#20312e;border-color:var(--gold);font-weight:700}button.primary:hover:not(:disabled){background:#f3d7aa}button.soft{background:transparent}h1,h2,h3,p{margin:0}h2{font-size:1.1rem}h3{font-size:1rem}small,.small{font-size:.875rem}.muted{color:var(--muted)}.eyebrow{font-size:.75rem;letter-spacing:.15em;color:var(--gold);text-transform:uppercase}.row{display:flex;align-items:center;gap:10px}.between{justify-content:space-between}.wrap{flex-wrap:wrap}.pill{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;padding:5px 9px;border-radius:6px;background:#2c4240;color:var(--mint)}.bonus-pill{background:#4b402b;color:#f3d2a1}.hidden{display:none!important}header{padding:19px 28px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:18px}header h1{font-size:1.4rem;letter-spacing:.1em;font-weight:600}.brand-mark{color:var(--gold);font-size:1.65rem;letter-spacing:-.25em;margin-right:7px}.head-meta{border-left:1px solid var(--line);padding-left:18px;font-size:.85rem;color:var(--muted)}.layout{display:grid;grid-template-columns:minmax(0,1fr) 355px;gap:18px;padding:20px 26px;max-width:1800px;margin:auto}.table-shell{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:radial-gradient(ellipse at 48% 30%,#294746 0%,#1b3232 55%,#172c2c 100%)}.table-top{padding:15px 20px;border-bottom:1px solid #ffffff12}.status-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;display:inline-block}.opponents{display:flex;justify-content:center;gap:15px;padding:22px 20px 14px}.opponent{min-width:0;flex:1;max-width:320px;padding:13px;border:1px solid #52716b69;border-radius:11px;background:#1126266b;position:relative}.opponent.active{border-color:var(--gold);box-shadow:inset 0 2px var(--gold)}.seat-label{font-size:.9rem;font-weight:600}.role-mini{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:42px;min-width:42px;height:55px;border-radius:5px;background:var(--paper);color:var(--ink);font-family:Georgia,serif;font-size:1.1rem;line-height:1}.role-mini.red{color:var(--red)}.opponent .meta{font-size:.8rem;color:var(--muted);margin-top:4px}.backs{display:flex;max-width:100%;overflow-x:auto;padding:14px 1px 7px;min-height:77px}.back{flex:0 0 33px;height:47px;border:1px solid #a1b5a1;border-radius:4px;background:repeating-linear-gradient(45deg,#59736b 0px,#59736b 2px,#294440 2px,#294440 7px);box-shadow:0 2px 4px #0003;margin-right:-17px}.back:last-child{margin-right:0}.backs .card-mini{margin-right:5px}.center-zone{display:grid;grid-template-columns:135px minmax(0,1fr);gap:20px;min-height:170px;padding:13px 26px 22px;align-items:center}.pool{text-align:center;padding:14px 0;border-right:1px solid #ffffff1c}.pool-graphic{position:relative;display:inline-flex;align-items:center;justify-content:center;background:#233e3c;width:66px;height:86px;border-radius:7px;border:1px solid #a0b4a1;box-shadow:4px 3px 0 #334f47,5px 4px 0 #869d85,8px 7px 0 #243d36,9px 8px 0 #6e8b76;margin-bottom:16px;font-family:Georgia,serif;color:var(--gold);font-size:1.9rem}.pool p{font-size:.85rem;color:var(--muted)}.pool strong{color:var(--text);font-size:1.1rem}.settlement{min-width:0;padding-left:6px}.section-label{font-size:.85rem;color:var(--muted);display:flex;align-items:center;gap:8px;margin-bottom:12px}.settlement-cards{display:flex;flex-wrap:wrap;gap:10px;min-height:86px;align-items:center}.empty-slot{border:1px dashed #79978a70;display:grid;place-items:center;width:62px;height:83px;border-radius:7px;color:#90aa9a;font-size:1.5rem}.card-mini{flex-shrink:0;background:var(--paper);color:var(--ink);border-radius:5px;width:45px;height:61px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-family:Georgia,serif;border:1px solid #dddfcc;font-size:1.1rem}.card-mini.red{color:var(--red)}.card-mini.joker{font-family:inherit;font-size:.82rem}.settled-card{display:flex;align-items:center;flex-direction:column;gap:5px}.settled-card span.small{font-size:.75rem;color:var(--muted)}.role-rack{padding:16px 20px 17px;background:#0d232344;border-top:1px solid #ffffff12}.roles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}.role-suit{padding:9px;border:1px solid #58726777;border-radius:7px}.role-suit-head{font-size:.8rem;display:flex;justify-content:space-between;gap:3px;margin-bottom:9px}.role-ranks{display:flex;gap:5px}.rank{display:inline-flex;align-items:center;justify-content:center;flex:1;height:29px;border-radius:4px;background:var(--paper);color:var(--ink);font-family:Georgia,serif;font-weight:700}.rank.red{color:var(--red)}.rank.used{background:transparent;color:#abc1b0;border:1px dashed #698474;opacity:.55}.hand-section{margin-top:18px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:19px 20px 15px}.hand-top{display:flex;align-items:center;gap:14px}.hand-title{flex:1}.relation-strip{display:flex;gap:12px;margin-top:7px;font-size:.8rem;color:var(--muted)}.hand{display:flex;overflow-x:auto;gap:8px;padding:18px 3px 9px;min-height:151px;scrollbar-color:#6d8979 #172827}.hand-wrap{flex:0 0 71px;position:relative;padding-bottom:21px}.hand-card{padding:7px;width:71px;height:106px;color:var(--ink);background:var(--paper);border:2px solid transparent;border-radius:7px;box-shadow:0 3px 4px #0004;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;position:relative;transition:transform .15s,border-color .15s}.hand-card:hover:not(:disabled){background:#fff9ee;transform:translateY(-5px);border-color:#bacdbb}.hand-card:disabled{opacity:1;cursor:default}.hand-card.red{color:var(--red)}.hand-card.selected{border-color:var(--gold);outline:2px solid var(--gold);transform:translateY(-7px)}.hand-card.positioned{outline:2px dashed var(--mint);outline-offset:2px}.hand-card .corner{font-size:1rem;line-height:1.1;font-family:Georgia,serif}.hand-card .suit-symbol{font-size:2.5rem;align-self:center;line-height:1;font-family:Georgia,serif}.hand-card .card-bottom{align-self:flex-end;transform:rotate(180deg)}.hand-card.joker .suit-symbol{font-family:inherit;font-size:1.15rem;font-weight:bold}.hand-card.joker .corner{font-family:inherit;font-size:.75rem}.card-position{position:absolute;bottom:0;left:0;width:100%;text-align:center;font-size:.75rem;color:var(--muted)}.card-position.preview{color:var(--gold);font-weight:600}.hand-note{font-size:.8rem;color:var(--muted);line-height:1.6}.side{display:flex;flex-direction:column;gap:16px;min-width:0}.panel{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden}.panel-inner{padding:19px}.action-head{padding:17px 19px;border-bottom:1px solid var(--line)}.turn-number{color:var(--gold);font-family:Georgia,serif;font-size:1.8rem;line-height:1}.action-body{padding:18px;min-height:186px}.action-body h3{line-height:1.6;margin-bottom:8px}.action-body p{font-size:.88rem;color:var(--muted);line-height:1.7}.choices{display:flex;flex-direction:column;gap:9px;margin-top:14px}.choice{display:block;text-align:left;background:#213837;padding:12px;width:100%;font-size:.88rem;line-height:1.5}.choice strong{display:block;color:var(--text);margin-bottom:3px}.choice small{display:block;color:var(--muted);font-size:.8rem}.choice.selected{border-color:var(--gold);background:#3b4335}.choice.selected strong{color:var(--gold)}.commit{width:100%;margin-top:16px}.action-footer{padding:12px 18px;border-top:1px solid #ffffff12;font-size:.78rem;color:var(--muted);line-height:1.6}.log-panel{flex:1;display:flex;flex-direction:column;min-height:230px;max-height:390px}.log-panel h2{font-size:1rem}.logs{list-style:none;padding:0 18px 12px;margin:0;overflow-y:auto;flex:1;max-height:310px;font-size:.82rem;line-height:1.65;scrollbar-color:#6d8979 #172827}.logs li{padding:10px 0;border-top:1px solid #ffffff10}.log-turn{display:inline-block;color:var(--gold);font-variant-numeric:tabular-nums;margin-right:8px;font-size:.75rem}.debug{border-top:1px solid var(--line);margin:0 26px;padding:16px 0 24px;max-width:1748px}.debug summary{color:var(--muted);cursor:pointer;font-size:.88rem}.debug-content{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-top:14px}.debug-content button{font-size:.85rem;padding:8px 12px}.check-label{display:flex;align-items:center;gap:8px;margin-left:5px;font-size:.85rem}.debug-detail{margin-top:12px;font-size:.8rem;color:var(--muted);line-height:1.7}.check-state{margin-left:auto;font-size:.8rem;color:var(--mint)}.notice{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#f1e9d7;color:#273a35;border:1px solid var(--gold);padding:12px 18px;border-radius:9px;box-shadow:0 8px 40px #0007;z-index:30;max-width:min(90vw,680px);line-height:1.6}.error-banner{padding:14px 24px;background:#6c3430;color:#ffe7df;line-height:1.6}.winner-note{background:#3a4937;border:1px solid var(--gold);padding:14px 18px;margin-bottom:17px;border-radius:9px;line-height:1.8}.winner-note strong{color:var(--gold)}dialog{color:var(--text);background:var(--surface);border:1px solid #71877c;border-radius:18px;padding:0;max-width:min(94vw,700px);max-height:88vh;width:560px;box-shadow:0 24px 100px #0009}dialog::backdrop{background:#051314bc;backdrop-filter:blur(5px)}.dialog-head{padding:24px 26px 18px;border-bottom:1px solid var(--line)}.dialog-body{padding:23px 26px}.dialog-body p{line-height:1.7;color:var(--muted)}.dialog-footer{display:flex;justify-content:flex-end;gap:10px;padding:18px 26px;border-top:1px solid var(--line)}.field{display:block;margin-top:20px;font-size:.9rem}.field input{display:block;width:100%;margin-top:9px;padding:12px}.player-picker{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.player-option{padding:18px 9px;background:#233837}.player-option strong{font-size:1.3rem;display:block;margin-bottom:5px}.player-option span{font-size:.75rem;color:var(--muted)}.player-option.selected{border-color:var(--gold);background:#3c4335}.player-option.selected strong{color:var(--gold)}.seed-row{display:flex;gap:8px;align-items:flex-end}.seed-row .field{flex:1}.seed-row button{padding:12px;font-size:.85rem}.rules-dialog{width:800px;max-width:min(94vw,800px)}.rules-body{line-height:1.8;font-size:.92rem}.rules-body h3{color:var(--gold);margin:19px 0 8px}.rules-body ul,.rules-body ol{padding-left:22px}.rules-body table{width:100%;border-collapse:collapse;font-size:.88rem}.rules-body th,.rules-body td{text-align:left;padding:8px 5px;border-bottom:1px solid var(--line)}.rules-body pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;font-size:.88rem}.rules-body details{margin-top:20px}.import-area{width:100%;min-height:220px;resize:vertical;padding:12px;margin-top:15px;font-family:Consolas,monospace;font-size:.85rem}.import-error{color:#ffc3b5;white-space:pre-wrap;overflow-wrap:anywhere;margin-top:10px;line-height:1.5;font-size:.85rem}.test-output{padding:13px;border-radius:8px;background:#102221;white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;font-size:.85rem;line-height:1.7;max-height:45vh;overflow:auto}input[type=checkbox]{accent-color:var(--gold);width:17px;height:17px}.rules-link{color:var(--gold)}
+@media(min-width:1800px){.debug{margin:auto}}@media(max-width:1100px){.layout{grid-template-columns:minmax(0,1fr) 315px;padding:16px;gap:14px}.opponents{padding:16px 12px;gap:8px}.opponent{padding:9px}.center-zone{padding:8px 16px 18px;gap:14px}.head-meta{display:none}.role-rack{padding:14px}.role-suit{padding:7px}.roles{gap:7px}.role-suit-head{font-size:.75rem}.debug{margin:0 16px}.relation-strip{gap:7px;flex-wrap:wrap}}@media(max-width:850px){header{padding:16px}.layout{grid-template-columns:1fr}.side{display:grid;grid-template-columns:1fr 1fr;align-items:start}.log-panel{max-height:420px}.logs{max-height:335px}.action-body{min-height:150px}}@media(max-width:560px){header{align-items:flex-start;gap:8px}header h1{font-size:1.1rem}.brand-mark{font-size:1.3rem}header button{font-size:.8rem;padding:8px 10px}.layout{padding:12px;gap:12px}.side{display:flex}.opponents{padding:12px 8px;gap:6px}.opponent{padding:8px 6px}.opponent .role-mini{width:27px;min-width:27px;height:40px;font-size:.85rem}.opponent .row{gap:5px}.opponent .seat-label{font-size:.77rem}.opponent .meta{font-size:.75rem}.opponent .pill{font-size:.75rem;padding:3px 5px}.back{flex-basis:26px;height:38px;margin-right:-18px}.backs{min-height:60px;padding-top:12px}.center-zone{grid-template-columns:95px 1fr;padding:8px 12px 16px;gap:12px}.pool-graphic{width:51px;height:69px}.pool p{font-size:.75rem}.settlement{padding-left:0}.role-rack{padding:12px}.roles{grid-template-columns:repeat(2,1fr)}.hand-section{margin-top:12px;padding:15px 12px}.hand-title h2{font-size:1rem}.relation-strip{font-size:.75rem;gap:6px}.hand-card{height:100px}.hand-top{gap:10px}.panel-inner,.action-body{padding:16px}.table-top{padding:12px;font-size:.85rem}.dialog-head,.dialog-body{padding:20px}.dialog-footer{padding:16px 20px}.debug{margin:0 12px}.check-state{margin-left:0;width:100%}.log-panel{max-height:300px}.logs{max-height:220px}.player-option{padding:14px 5px}.player-option span{font-size:.72rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+/* Original, code-drawn pixel table. All texture and card art are embedded. */
+:root{--bg:#242426;--surface:#292d30;--surface2:#343c3e;--line:#656458;--text:#eee8cc;--muted:#b3b7a5;--gold:#efc36a;--mint:#acd2bb;--paper:#e6e5c9;--radius:3px;font-family:"Microsoft YaHei","Segoe UI",sans-serif}
+body{background-color:#292628;background-image:repeating-linear-gradient(0deg,#0000 0px,#0000 3px,#00000008 3px,#00000008 4px),radial-gradient(ellipse at 50% 10%,#57433c66,transparent 75%);min-height:100vh}
+header{background:#22292bf2;border-bottom:3px solid #11191b;box-shadow:0 2px 0 #797559;padding:17px 26px}header h1{color:#eee4be;text-shadow:2px 2px #151b20;letter-spacing:.16em;font-weight:800}.brand-mark{color:#dcb45e;text-shadow:2px 2px #131920}.head-meta{color:#bec2aa}.layout{gap:20px;padding-top:22px;padding-bottom:20px}
+button,input,textarea,select{border-radius:2px;border:2px solid #696e60;box-shadow:inset 0 2px 0 #aebaaa1c,0 3px 0 #151e21}button{transition:transform .12s,background .12s,border-color .12s}button:hover:not(:disabled){background:#43524d;border-color:#d7d2ae;transform:translateY(-2px)}button:active:not(:disabled){transform:translateY(2px);box-shadow:inset 0 2px 0 #0002,0 1px 0 #151e21}button.primary{background:#ccab5e;border-color:#eed991;color:#222c2c;box-shadow:inset 0 2px 0 #f8e3a6,0 4px 0 #695334,0 6px 0 #131b1d;text-shadow:0 1px #ebd492}button.primary:hover:not(:disabled){background:#e5c16b;border-color:#f6e3ab}button:disabled{box-shadow:none}
+.table-shell{border:4px solid #9a8050;box-shadow:0 0 0 2px #211f25,inset 0 0 0 3px #372a2d,6px 7px 0 #11191bb3;background-color:#61433c;background-image:linear-gradient(90deg,#2e252638,transparent 13%,transparent 87%,#2e25264f),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='420' viewBox='0 0 800 420' shape-rendering='crispEdges'%3E%3Cpath d='M0 0H800M0 105H800M0 210H800M0 315H800M0 419H800' stroke='%23382d30' stroke-width='5'/%3E%3Cpath d='M0 6H800M0 110H800M0 216H800M0 320H800' stroke='%2384664b' stroke-width='2'/%3E%3Cg fill='none' stroke='%23443133' stroke-width='3' opacity='.65'%3E%3Cpath d='M0 24H88L112 43H251L272 63H400L430 84H610L650 62H800M0 66H65L106 89H242M302 26H474L514 43H626L651 29H800M0 136H166L203 169H363L400 150H567L611 185H800M0 193H183L206 181M0 245H81L110 228H202L243 267H409L427 288H599L627 269H800M0 284H139L151 297H318M438 240H565L594 222H769M0 350H85L116 370H278L302 351H489L524 389H677L705 367H800M0 399H210L234 380M512 335H654L698 349H800'/%3E%3C/g%3E%3Cg fill='%23765745' opacity='.4'%3E%3Cpath d='M154 49h53v3h-53zM538 69h68v3h-68zM96 149h63v3H96zM637 157h76v3h-76zM60 260h50v3H60zM273 237h78v3h-78zM397 366h57v3h-57zM53 379h68v3H53z'/%3E%3C/g%3E%3C/svg%3E");background-size:auto,800px 420px;position:relative}
+.table-top{background:#332c2bd9;border-bottom:2px solid #b599542e;padding:13px 18px;color:#e6d7ac;text-shadow:1px 2px #211d20}.table-top .muted{color:#c3b497}.status-dot{border-radius:0;box-shadow:2px 2px #261f21;width:9px;height:9px}.opponents{padding:23px 22px 18px;gap:16px}.opponent{border:2px solid #93794f;border-radius:2px;background:#253234ed;box-shadow:3px 4px 0 #2a2427}.opponent.active{border-color:#e9c56d;box-shadow:inset 0 3px #e9c56d,3px 4px 0 #2a2427}.seat-label{color:#eee5c7;text-shadow:1px 1px #101c21}.role-mini{background:none;border:0;border-radius:0;box-shadow:2px 2px 0 #132124;width:42px;height:60px;overflow:visible}.role-mini svg,.card-mini svg,.hand-card svg,.back svg,.pool-graphic svg{width:100%;height:100%;display:block;image-rendering:pixelated;overflow:visible}.backs{padding-top:13px;padding-bottom:8px;min-height:78px}.back{background:none;border:0;border-radius:0;box-shadow:2px 2px 0 #162124;flex-basis:34px;height:49px;margin-right:-17px}.center-zone{min-height:192px;padding:8px 29px 24px;grid-template-columns:130px 1fr;gap:25px}.pool{border-right:2px solid #ceb97935;padding:5px 0}.pool-graphic{background:none;border:0;border-radius:0;width:63px;height:90px;box-shadow:3px 3px 0 #909080,5px 5px 0 #c5c6a6,7px 7px 0 #53615c,9px 9px 0 #272e2e;margin-bottom:17px}.pool p{color:#e0cfa4;text-shadow:1px 2px #2c2225}.pool strong{color:#f0dda8;text-shadow:2px 2px #352831}.section-label{color:#ead9b7;text-shadow:1px 2px #39282e}.settlement{padding-left:0}.settlement-cards{min-height:90px;gap:12px}.card-mini{background:none;border:0;border-radius:0;width:53px;height:76px;box-shadow:3px 3px 0 #282830;gap:0}.settled-card span.small{color:#e8d5b1}.settlement .muted{color:#d8c6ad;text-shadow:1px 1px #32282c}.empty-slot{border:2px dashed #c6b28566;border-radius:0;background:#2c292a30;color:#c7b68c;height:84px;width:60px}.pill{border-radius:1px;background:#364846;color:#c2d3b7;border:1px solid #6f8971;box-shadow:1px 2px #182b2e;text-shadow:none}.bonus-pill{background:#8b563c;color:#f4db95;border:1px solid #c3944f}.role-rack{background:#20292cdd;border-top:3px solid #392a27;padding:14px 19px 16px}.roles{gap:11px;margin-top:10px}.role-suit{border:1px solid #817753;background:#212d2f;border-radius:1px;padding:8px 10px}.role-suit-head{color:#dcd8b9}.rank{border-radius:0;background:#dfdfbe;color:#28373b;box-shadow:1px 2px #111e25;border:1px solid #9caa95;height:26px;font-family:Consolas,monospace}.rank.red{color:#ad4c4b}.rank.used{box-shadow:none;color:#a8aea1;border-color:#697b6b}.hand-section{border:3px solid #8d855e;border-radius:2px;background:#253537;box-shadow:0 0 0 2px #141e24,5px 6px 0 #111b1e;padding-top:17px;margin-top:19px}.hand-title h2{letter-spacing:.06em;color:#e3e0bd}.hand{gap:10px;padding-top:21px;padding-bottom:10px;min-height:162px}.hand-wrap{flex-basis:77px;padding-bottom:22px}.hand-card{width:77px;height:110px;padding:0;background:none;border:0;border-radius:0;box-shadow:3px 4px 0 #111e26;transform-origin:center 75%;overflow:visible}.hand-card:hover:not(:disabled){background:none;border:0;transform:translateY(-9px) rotate(var(--hover-turn,-3deg)) scale(1.035);filter:brightness(1.06);z-index:2;box-shadow:5px 7px 0 #0d1822}.hand-card.selected{outline:3px solid #f0c164;outline-offset:3px;transform:translateY(-10px) rotate(-2deg);box-shadow:5px 6px #152027}.hand-card.positioned{outline:3px dashed #a9cfb1;outline-offset:3px}.card-position{color:#b7bfa4;font-family:Consolas,"Microsoft YaHei",monospace;font-size:.78rem}.card-position.preview{color:#f4d187}.hand-note{color:#b4c2b2}.panel{border:3px solid #686f60;border-radius:2px;box-shadow:4px 5px 0 #101b21;background:#253235}.action-head{background:#263438;border-bottom:2px solid #101e26;padding:15px 17px}.action-head h2{font-size:1.15rem;text-shadow:1px 2px #132125}.eyebrow{font-family:Consolas,"Microsoft YaHei",monospace;letter-spacing:.12em;color:#d3b76e}.turn-number{font-family:Consolas,monospace;color:#ead291;text-shadow:3px 3px #101e26;font-weight:800;font-size:2rem}.action-body{background:#29383a;padding:17px}.action-body h3{color:#e7e3c0}.action-body p{color:#bdc7b7}.choice{background:#334647;border:2px solid #697d6c;border-radius:1px;padding:10px 12px;box-shadow:2px 3px #16282b}.choice.selected{border-color:#efc263;background:#5b573c}.choice.selected strong{color:#f3dd95}.choice strong{font-size:.85rem}.choice small{font-size:.8rem;color:#bdc6b2}.action-footer{border-top:2px solid #1a282b;background:#243133;color:#afbfad}.log-panel{background:#202d30}.logs{font-size:.81rem;line-height:1.7}.logs li{border-color:#71806a30}.log-turn{font-family:Consolas,monospace;color:#d2b877}.debug{border-color:#7d7a544d}.debug summary{color:#babca6}.check-state{color:#a8cbb1}.winner-note{border:3px solid #c4a552;border-radius:1px;box-shadow:4px 4px #152128;background:#464b34}.winner-note strong{color:#ffe199}
+dialog{border:3px solid #ab965f;border-radius:3px;background:#29383a;box-shadow:0 0 0 3px #16202a,8px 10px 0 #101922,0 25px 100px #0009}dialog::backdrop{background:#101a20d9;backdrop-filter:blur(3px)}.dialog-head{border-bottom:3px solid #16292c;background:#223236}.dialog-head h2{color:#e5dcad;letter-spacing:.06em;text-shadow:2px 2px #14252a}.dialog-body p{color:#bfc9b9}.dialog-footer{border-top:2px solid #17292c;background:#253235}.player-option{border-color:#677c6c;background:#304444;padding:20px 7px}.player-option.selected{background:#675839;border-color:#d0b36c}.player-option.selected strong{color:#f3dd95}.player-option strong{font-family:Consolas,"Microsoft YaHei",monospace;text-shadow:2px 2px #162a2f}.player-option span{color:#c5cbb3}.notice{border-radius:1px;border:3px solid #bcaa6a;background:#e0dbb6;box-shadow:5px 5px #172029;color:#273736}.test-output{border-radius:0;border:1px solid #748776;background:#17282d}.rules-body h3{color:#ddbd6d}.card-flight{position:fixed;z-index:50;pointer-events:none;transform-origin:center;box-shadow:4px 5px #18232d77}.card-flight svg{display:block;width:100%;height:100%}
+@media(max-width:1100px){.opponents{padding:18px 12px 15px;gap:9px}.center-zone{padding:8px 15px 20px;gap:18px}.role-rack{padding:12px}.role-suit{padding:7px}.roles{gap:7px}.hand{gap:8px}.hand-wrap{flex-basis:72px}.hand-card{width:72px;height:103px}}
+@media(max-width:560px){header{padding:15px 12px}.layout{padding:14px 10px}.table-shell{border-width:3px;box-shadow:3px 4px #141f25}.opponents{padding:14px 7px;gap:6px}.opponent{padding:8px 5px;border-width:1px}.opponent .role-mini{width:29px;min-width:29px;height:42px}.center-zone{min-height:170px;grid-template-columns:84px 1fr;gap:15px;padding:7px 10px 17px}.pool-graphic{width:49px;height:70px}.role-rack{padding:12px}.role-suit{padding:8px}.hand-section{padding:15px 10px;border-width:2px}.hand-wrap{flex-basis:69px}.hand-card{width:69px;height:99px}.hand{gap:10px;min-height:151px}.side{gap:15px}.panel{border-width:2px}.back{flex-basis:27px;height:39px;margin-right:-18px}.backs{min-height:63px}.table-top{font-size:.8rem;padding:10px}.table-top .small{font-size:.75rem}.card-mini{width:47px;height:67px}.settlement-cards{gap:8px}.player-option{padding:17px 4px}.player-option span{font-size:.72rem}}
+
+/* A quiet table: opponents above, decisions in the middle, your cards below. */
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.skip-pill{background:#643d38;color:#efd0a3;border-color:#b47854;font-size:.73rem;margin:4px 3px 0}.action-body .suppress-preview{font-size:.76rem;color:#ffd094;margin:5px 0 0}.hand-title .skip-pill{font-size:.65rem;padding:3px}
+body{background-color:#262427}.game-toolbar{max-width:1540px;margin:0 auto;padding:14px 26px;background:transparent;border:0;box-shadow:none;min-height:72px}.game-toolbar h1{font-size:1.15rem}.game-toolbar .brand-mark{font-size:1.45rem}.table-tools{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-shrink:0}.table-tools button{font-size:.88rem;padding:8px 12px;min-height:40px;background:#242e30;border:1px solid #76755a;box-shadow:2px 3px #111b21}.table-tools .help-button{flex:0 0 42px;width:42px;height:42px;margin-left:8px;padding:0;font:700 1.45rem Consolas,monospace;color:#f0d38b;border:2px solid #c0a96b;background:#444532;box-shadow:3px 3px #161e22}.help-button:hover{background:#635c3d!important}.table-tools #soundButton{min-width:96px}.table-tools #soundButton[aria-pressed=false]{color:#aab5a6}
+.arena{max-width:1488px;width:calc(100% - 44px);margin:0 auto 16px;padding:18px 24px 14px;min-height:calc(100svh - 147px);display:grid;grid-template-rows:auto minmax(156px,1fr) auto minmax(172px,1fr);gap:12px;border-width:3px;box-shadow:0 0 0 2px #211f25,inset 0 0 60px #1d191c50,5px 6px #12191fb3;border-color:#8d724b;overflow:visible}.table-top{display:flex;align-items:center;justify-content:center;gap:16px;padding:0;min-height:28px;background:none;border:0;font-size:.9rem}.table-top strong{color:#f2d898;font-weight:600}.turn-meta{font-size:.8rem;color:#d7c49d}.table-top #seatOrder{margin-left:auto;font-size:.75rem;opacity:.7}.table-top .turn-meta{order:-1;margin-right:auto}.opponents{align-items:center;justify-content:center;padding:6px 80px 0;gap:28px}.opponent{flex:1;max-width:330px;padding:6px 9px 8px;border:0;border-bottom:2px solid transparent;border-radius:0;background:none;box-shadow:none;text-align:center;min-width:0}.opponent>.row{justify-content:center;gap:12px}.opponent.active{border-color:#e2be6c;box-shadow:none;background:linear-gradient(0deg,#e5bf6521,transparent 55%)}.opponent .role-mini{width:42px;min-width:42px;height:60px}.opponent .meta{color:#d9c8a9;font-size:.78rem}.opponent .seat-label{font-size:.95rem;color:#f0dec0}.opponent .seat-label .muted{color:#ddd0b3}.opponent>span.muted{display:none}.backs{justify-content:center;padding:11px 6px 7px;min-height:77px;overflow-x:auto;scrollbar-width:thin}.back{flex:0 0 40px;height:57px;margin-right:-17px;box-shadow:2px 3px #30252b;transform:rotate(-1deg)}.back:nth-child(even){transform:translateY(2px) rotate(1deg)}.backs .card-mini{width:39px;height:56px;margin-right:4px}.arena[data-players="2"] .opponent{max-width:650px}.arena[data-players="2"] .back{flex-basis:47px;height:67px;margin-right:-18px}.arena[data-players="2"] .backs .card-mini{width:45px;height:64px}
+.middle-zone{display:grid;grid-template-columns:112px minmax(0,1fr) 128px;gap:22px;align-items:center;min-height:202px}.pool{border:0;padding:0;text-align:center}.pool-graphic{width:63px;height:90px;margin-bottom:16px}.pool p,.role-deck>p{color:#e6d7b6;font-size:.82rem;line-height:1.6;text-shadow:1px 2px #33272a}.pool strong,.role-deck>strong{font:700 .9rem Consolas,"Microsoft YaHei",sans-serif;color:#f2d798;line-height:1.8}.role-deck{text-align:center;position:relative;align-self:center}.role-deck .pool-graphic{filter:hue-rotate(18deg) saturate(.6)}.role-counts{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:9px auto 7px;font-size:.81rem;color:#ebd8b8;max-width:145px}.role-counts span{white-space:nowrap}.role-counts .empty{opacity:.42}.role-rack{margin:0;padding:0;background:none;border:0;position:relative}.role-rack summary{color:#d7c9a8;font-size:.75rem;cursor:pointer;list-style:none;text-decoration:underline;text-underline-offset:3px}.role-rack summary::-webkit-details-marker{display:none}.role-popover{position:absolute;top:28px;right:0;width:325px;max-width:75vw;background:#263536;border:2px solid #b79b5e;box-shadow:4px 5px #19252b;padding:16px;z-index:10;text-align:left}.role-popover .roles{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:10px}.role-popover .role-suit-head{font-size:.8rem}.role-popover .rank{height:30px}
+.center-play{min-width:0}.settlement{text-align:center;min-height:110px}.section-label{justify-content:center;font-size:.75rem;margin-bottom:6px;color:#ccbb9a;gap:8px}.section-label .pill{background:none;border:0;box-shadow:none;padding:0;color:#d9c8a4;font-size:.75rem}.settlement-cards{justify-content:center;min-height:77px;gap:12px}.settled-card{gap:3px}.settled-card .card-mini{width:44px;height:63px}.settled-card span.small{font-size:.7rem;color:#d8c5a8}.settlement-cards>.muted{color:#d1bd99;font-size:.85rem;opacity:.72}.settlement .empty-slot{display:none}#pendingNote{font-size:.72rem;line-height:1.5;color:#c9b797;margin-top:5px;min-height:16px}.action-ribbon{margin:12px auto 0;max-width:850px;min-height:72px}.action-body{padding:0;min-height:0;background:none;text-align:center}.action-body h3{font-size:1rem;color:#efdbad;text-shadow:1px 2px #33272c;margin-bottom:6px}.action-body p{color:#dfcfac;font-size:.86rem;line-height:1.6}.action-body>.turn-prompt{font-size:.95rem;color:#e9d1a0;letter-spacing:.05em}.action-controls{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:10px;margin:8px 0}.choices{display:flex;flex-direction:row;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:9px;margin:0}.choice{width:auto;min-width:120px;padding:11px 17px;border:2px solid #769589;background:#2d5054;box-shadow:0 3px #162830,3px 3px #1c2830;font-size:.88rem;text-align:center;color:#e4e0bd;min-height:45px}.choice strong{font-size:.88rem;margin:0}.choice.selected{background:#ad594c;border-color:#e3b173;box-shadow:0 3px #6f3530,3px 3px #292332}.choice.selected strong{color:#f5e8be}.choice:hover:not(:disabled){background:#43656a}.choice.selected:hover:not(:disabled){background:#b86959}.action-controls .commit{margin:0;width:auto;min-width:105px;min-height:45px;padding:9px 18px}.selection-detail{min-height:20px;font-size:.78rem!important;max-width:690px;margin:5px auto 0!important}.quiet-action{padding:6px 13px;margin-left:12px;font-size:.8rem;border:1px solid #938766;box-shadow:none;background:#3c3732}.bonus-choices{margin-top:10px}.action-body>.commit{width:auto;margin-top:12px}.action-body>.choices{margin-top:10px}
+.hand-section{display:grid;grid-template-columns:103px minmax(0,1fr);grid-template-rows:1fr auto;align-items:center;gap:0 18px;margin:0;padding:6px 0 0;background:none;border:0;box-shadow:none;border-radius:0;min-width:0}.hand-top{display:block;text-align:center;align-self:center}.hand-top #myRole{display:flex;justify-content:center;margin-bottom:9px}.hand-top .role-mini{width:57px;min-width:57px;height:81px;box-shadow:3px 3px #32262c}.hand-title h2{color:#eadbbd;font-size:.9rem;text-shadow:1px 1px #31262a}.hand-title>.row{justify-content:center;gap:7px}.hand-title .muted{color:#dac9a7}.relation-strip{justify-content:center;gap:2px 8px;color:#cebd9c;font-size:.71rem;line-height:1.6;margin-top:5px;flex-wrap:wrap}.relation-strip span:last-child{display:none}.hand-title .bonus-pill{font-size:.7rem;padding:3px 5px}.hand{margin:0;gap:10px;padding:21px 6px 12px;min-height:181px;justify-content:safe center;align-items:center;scrollbar-color:#a58d57 #45322f}.hand-wrap{flex:0 0 84px;padding-bottom:22px}.hand-card{width:84px;height:120px;box-shadow:3px 4px #33272c;touch-action:manipulation}.hand-card:hover:not(:disabled){box-shadow:5px 8px #34272e}.hand-card.selected{outline-color:#f2cd71;box-shadow:4px 7px #34272e}.card-position{color:#d6c49f;font-size:.75rem}.hand-note{grid-column:2;margin:0;text-align:center;color:#bea783;font-size:.73rem;line-height:1.5}.winner-note{grid-column:1/-1;padding:9px 15px;margin:0;text-align:center;background:#564d34;border:1px solid #b9a366;box-shadow:none;font-size:.9rem}
+.debug{width:calc(100% - 60px);max-width:1460px;margin:0 auto;padding:0 0 15px;border:0}.debug summary{font-size:.8rem;color:#a9a78f}.debug-content{padding:15px;background:#243033;border:1px solid #5d6b5e;margin-top:10px}.debug-detail{font-size:.8rem}.logs-dialog{width:680px}.logs-dialog .logs{padding:13px 24px 22px;max-height:62vh;font-size:.9rem}.logs-dialog .logs li{padding:12px 0}.rules-dialog{width:790px;max-width:min(94vw,790px)}.rules-dialog .dialog-head{position:sticky;top:0;z-index:2;gap:20px}.rules-dialog .dialog-head button{white-space:nowrap;flex-shrink:0}.rules-dialog .rules-body{font-size:.94rem}.rules-dialog::backdrop{background:#131b20f2;backdrop-filter:none}
+@media(min-width:1600px){.arena{min-height:min(880px,calc(100svh - 147px))}.hand-wrap{flex-basis:94px}.hand-card{width:94px;height:134px}.back{flex-basis:47px;height:67px;margin-right:-19px}.opponent .role-mini{width:49px;height:70px}.hand{min-height:198px}}
+@media(max-width:1000px){.arena{width:calc(100% - 28px);padding:14px 16px;gap:12px}.opponents{padding:4px 30px 0;gap:12px}.middle-zone{grid-template-columns:87px minmax(0,1fr) 108px;gap:15px}.role-counts{gap:3px;font-size:.75rem}.pool-graphic{width:55px;height:79px}.choice{padding:10px 12px;min-width:100px}.hand-wrap{flex-basis:76px}.hand-card{width:76px;height:109px}.hand{min-height:161px;gap:9px}.hand-section{grid-template-columns:85px minmax(0,1fr);gap:0 12px}.action-controls .commit{min-width:98px}.opponent .seat-label{font-size:.86rem}.table-top #seatOrder{display:none}.table-top .turn-meta{margin:0}.table-top{justify-content:center}.game-toolbar{padding:13px 20px}.debug{width:calc(100% - 40px)}}
+@media(max-width:620px){.game-toolbar{padding:10px 12px;min-height:63px;align-items:center;gap:8px}.game-toolbar h1{font-size:.94rem;letter-spacing:.03em}.game-toolbar .brand-mark{display:none}.table-tools{gap:6px}.table-tools button{min-height:35px;padding:6px 9px;font-size:.78rem}.table-tools #soundButton{min-width:72px}.table-tools .help-button{margin-left:2px;width:36px;flex-basis:36px;height:36px;min-height:36px;font-size:1.25rem}.arena{width:calc(100% - 18px);padding:12px 9px;grid-template-rows:auto auto auto auto;min-height:calc(100svh - 115px);gap:17px}.table-top{font-size:.83rem;gap:12px}.opponents{padding:0;gap:7px;align-items:flex-start}.opponent{padding:4px 0 7px}.opponent>.row{gap:6px;flex-direction:column}.opponent .role-mini{width:33px;min-width:33px;height:47px}.opponent .seat-label{font-size:.78rem;white-space:nowrap}.opponent .meta{display:none}.back{flex-basis:27px;height:39px;margin-right:-17px}.backs{padding:9px 2px 5px;min-height:53px}.arena[data-players="2"] .opponent>.row{flex-direction:row}.arena[data-players="2"] .opponent .role-mini{width:39px;height:56px}.arena[data-players="2"] .back{flex-basis:34px;height:49px;margin-right:-18px}.backs .card-mini{width:26px;height:37px}.middle-zone{grid-template-columns:61px minmax(0,1fr) 71px;gap:8px;min-height:180px}.pool-graphic{width:42px;height:60px;box-shadow:3px 3px #909080,5px 5px #c5c6a6,7px 7px #53615c;margin-bottom:13px}.pool p,.role-deck>p{font-size:.7rem}.pool strong,.role-deck>strong{font-size:.8rem}.role-counts{grid-template-columns:repeat(2,1fr);font-size:.75rem;gap:3px;margin:5px auto}.role-rack summary{font-size:.68rem}.section-label{font-size:.68rem}.settlement-cards{min-height:65px;gap:7px}.settled-card .card-mini{width:35px;height:50px}.settled-card span.small{font-size:.65rem}.settlement{min-height:93px}#pendingNote{font-size:.65rem}.action-ribbon{margin-top:9px}.action-body>.turn-prompt{font-size:.82rem}.action-body h3{font-size:.88rem}.action-body p{font-size:.76rem}.action-controls{gap:8px;margin-top:8px}.choices{gap:7px}.choice{min-width:0;padding:8px 9px;min-height:39px;flex:1 1 auto}.choice strong{font-size:.76rem}.action-controls .commit{min-width:95px;min-height:36px;padding:8px 12px;font-size:.78rem}.selection-detail{font-size:.69rem!important}.quiet-action{margin:6px 0 0;padding:5px 10px;font-size:.72rem}.hand-section{grid-template-columns:65px minmax(0,1fr);gap:0 8px;padding:0}.hand-top .role-mini{width:43px;min-width:43px;height:61px}.hand-title h2{font-size:.78rem}.relation-strip{font-size:.65rem;gap:1px 4px}.hand-wrap{flex-basis:64px;padding-bottom:19px}.hand-card{width:64px;height:92px}.hand{min-height:140px;gap:8px;padding:17px 5px 9px}.hand-note{font-size:.66rem}.card-position{font-size:.65rem}.debug{width:calc(100% - 26px)}.logs-dialog .logs{padding:12px 18px}.role-popover{right:0;width:265px;padding:12px}.rules-dialog .dialog-head{padding:15px;gap:10px}.rules-dialog .dialog-head h2{font-size:.95rem}.rules-dialog .dialog-head button{font-size:.78rem;padding:9px}.table-tools .help-button:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.hand-card:hover:not(:disabled),.hand-card.selected{transform:translateY(-4px)}}
+
+/* V2: readable ranks and a visible portrait for every public role. */
+.opponent .role-mini{width:64px;min-width:64px;height:92px}
+.hand-top .role-mini{width:74px;min-width:74px;height:106px}
+.hand-wrap{flex-basis:96px}.hand-card{width:96px;height:138px}.hand{min-height:202px;gap:11px}
+.relation-strip span:last-child{display:inline}
+.role-ranks .rank{height:70px;padding:0;background:none;border:0;box-shadow:none}.role-ranks .rank.used{opacity:.3;filter:grayscale(.8)}
+.role-ranks .rank .card-art{width:100%;height:100%;display:block}
+.choice-section{margin:9px auto;max-width:740px}.choice-label{display:block;color:#f0d79e;font-size:.8rem;margin-bottom:6px}
+.compact-choices{display:flex;flex-wrap:wrap;justify-content:center;gap:7px}.compact-choices button{padding:7px 11px;font-size:.82rem;min-height:34px}
+.compact-choices button.selected{border-color:#e4bf6d;background:#a45546;color:#fff0c7}
+.response-panel{border:1px solid #c28f5a;background:#452f3240;padding:12px;margin:6px auto;max-width:620px}
+.response-values{font-size:1.1rem;letter-spacing:.08em;color:#ffe0a0;margin:7px 0}
+.hand-card.unmatchable{opacity:.38;filter:grayscale(.5)}
+.action-body .response-panel p{font-size:.78rem}.response-panel h3{font-size:.94rem}
+.role-popover .role-ranks .rank{height:70px}
+.hand-card.positioned{outline:3px dashed #b6d8b4;outline-offset:3px;transform:translateY(-5px)}
+@media(max-width:1000px){.hand-wrap{flex-basis:88px}.hand-card{width:88px;height:126px}.hand{min-height:185px}.opponent .role-mini{width:58px;min-width:58px;height:83px}}
+@media(max-width:620px){.hand-wrap{flex-basis:77px}.hand-card{width:77px;height:110px}.hand{min-height:157px}.opponent .role-mini{width:47px;min-width:47px;height:67px}.arena[data-players="2"] .opponent .role-mini{width:53px;height:76px}.hand-top .role-mini{width:51px;min-width:51px;height:73px}.role-ranks .rank{height:57px}.choice-label{font-size:.72rem}.compact-choices button{font-size:.74rem;padding:6px 8px}}
+
+/* V3 arrangement controls; card artwork remains unchanged. */
+.hand-tools{grid-column:2;display:flex;justify-content:center;gap:10px;margin:0 0 7px}.hand-tools button{font-size:.72rem;padding:5px 10px;background:#343e3d;border:1px solid #867d61;box-shadow:none}.action-body .chain-hint{color:#f3d58e;font-size:.82rem;margin-bottom:8px}
+
+/* Compact landscape table; keeps the desktop layout and original card art. */
+body{padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.game-toolbar{padding-top:max(10px,env(safe-area-inset-top,0px))}
+.rotate-hint{display:none}.screen-hint{margin:0 auto 8px;max-width:800px;padding:8px 16px;color:#f3d58e;font-size:.82rem;line-height:1.5;text-align:center}
+button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.hand{overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;touch-action:pan-x pinch-zoom}
+@media(pointer:coarse){
+  .table-tools button,.choices button,.compact-choices button,.hand-tools button,.action-controls button,.dialog-footer button{min-height:44px}
+  input,select,textarea{font-size:16px}
+  .hand-card:hover:not(:disabled){transform:none}
+  .hand-card.selected:hover:not(:disabled){transform:translateY(-7px)}
+}
+@media(max-width:700px) and (orientation:portrait){
+  .rotate-hint{display:block;background:#353c36;border-block:1px solid #766a4e;padding:10px 16px;color:#f1d58c;font-size:.82rem;line-height:1.6;text-align:center}
+  .rotate-hint span{font-size:1.4rem;vertical-align:middle;margin-right:5px}
+  .game-toolbar{flex-wrap:wrap;justify-content:center;gap:6px;padding-inline:8px}
+  .game-toolbar>div{display:none}.table-tools{gap:6px}.table-tools button{min-height:44px}
+  .screen-hint{font-size:.76rem}
+}
+@media(orientation:landscape) and (max-height:600px) and (max-width:1200px){
+  .game-toolbar{height:44px;min-height:44px;padding:2px 12px;gap:10px}
+  .game-toolbar h1{font-size:.95rem;white-space:nowrap}.game-toolbar .brand-mark{display:none}
+  .table-tools{gap:7px}.table-tools button{font-size:.75rem;min-height:38px;padding:5px 11px;box-shadow:1px 2px #111b21}
+  .table-tools #soundButton{min-width:77px}.table-tools .help-button{width:38px;flex-basis:38px;height:38px;margin-left:3px;font-size:1.25rem}
+  .arena{width:calc(100% - 16px);margin:0 auto 5px;padding:6px 9px;min-height:250px;height:calc(100svh - 50px - env(safe-area-inset-bottom,0px));max-width:none;display:grid;grid-template-columns:minmax(0,1fr) clamp(220px,33vw,340px);grid-template-rows:20px minmax(76px,.7fr) minmax(132px,1.3fr);grid-template-areas:"status play" "opponents play" "hand play";gap:5px 12px}
+  .table-top{grid-area:status;min-height:0;gap:12px;font-size:.78rem;align-self:center}.table-top .turn-meta{font-size:.7rem}.table-top #seatOrder{display:none}
+  .opponents{grid-area:opponents;min-width:0;min-height:0;padding:0;gap:8px;align-items:center;overflow:hidden}
+  .opponent{padding:3px 0;min-width:0;max-width:none;align-self:center}.opponent>.row{gap:5px;flex-direction:row}
+  .opponent .role-mini,.arena[data-players="2"] .opponent .role-mini{width:34px;min-width:34px;height:49px}
+  .opponent .seat-label{font-size:.73rem}.opponent .meta{display:none}
+  .backs{min-height:22px;max-height:33px;margin-top:-1px;padding:2px 5px 0;overflow:hidden}
+  .back,.arena[data-players="2"] .back{flex-basis:20px;height:28px;margin-right:-13px}
+  .backs .card-mini,.arena[data-players="2"] .backs .card-mini{width:20px;height:28px;margin-right:2px}
+  .opponent .skip-pill{font-size:.61rem;padding:2px;margin:1px}
+  .middle-zone{grid-area:play;display:block;min-width:0;min-height:0;align-self:stretch;overflow-y:auto;overscroll-behavior-y:contain;padding:5px 8px;border-left:1px solid #8d724b66;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+  .middle-zone>.pool,.middle-zone>.role-deck{display:inline-block;width:49%;vertical-align:top;min-height:0;position:relative}
+  .middle-zone>.pool{float:left}.middle-zone>.role-deck{float:right}.middle-zone>.center-play{clear:both}
+  .middle-zone>.role-deck{position:absolute;top:0;right:0}
+  .middle-zone{position:relative;padding-top:53px}
+  .middle-zone>.pool{position:absolute;top:0;left:0}
+  .middle-zone .pool-graphic{display:none}.pool p,.role-deck>p{font-size:.65rem;line-height:1.4}.pool strong,.role-deck>strong{font-size:.74rem;line-height:1.4}
+  .role-counts{display:flex;justify-content:center;gap:5px;margin:1px auto;font-size:.63rem}.role-rack summary{font-size:.63rem;line-height:1.4}
+  .role-popover{position:fixed;right:max(12px,env(safe-area-inset-right,0px));top:48px;width:280px;max-height:calc(100svh - 70px);overflow:auto;z-index:20}
+  .settlement{display:flex;align-items:center;justify-content:center;gap:7px;min-height:0;padding:0}.section-label{font-size:.61rem;gap:3px;flex-direction:column;margin:0}.section-label .pill{font-size:.61rem}
+  .settlement-cards{min-height:36px;gap:5px}.settled-card{flex-direction:row;gap:5px}.settled-card .card-mini{width:25px;height:36px}.settled-card span.small{max-width:56px;font-size:.62rem}
+  #pendingNote{display:none}.action-ribbon{margin:6px 0 0;min-height:0}.action-body>.turn-prompt{font-size:.78rem;line-height:1.5}.action-body .chain-hint{font-size:.7rem;line-height:1.4;margin-bottom:5px}
+  .action-body h3{font-size:.85rem;margin:0 0 4px}.action-body p{font-size:.73rem;line-height:1.5}.quiet-action{min-height:32px;padding:3px 9px;font-size:.68rem;margin:0 0 0 5px}
+  .choices{gap:6px}.choice{min-width:0;flex:1 1 auto;min-height:42px;padding:5px 7px;font-size:.76rem;border-width:1px;line-height:1.3}
+  .choice-section{margin:5px auto}.choice-label{font-size:.68rem;margin-bottom:3px}.compact-choices{gap:5px}.compact-choices button{min-height:40px;padding:4px 8px;font-size:.72rem}
+  .action-controls{margin:7px 0 4px}.action-controls .commit{width:100%;min-height:44px;padding:6px 8px;font-size:.85rem}.selection-detail{font-size:.67rem!important;min-height:0;line-height:1.4!important}
+  .hand-section{grid-area:hand;min-height:0;min-width:0;align-self:stretch;grid-template-columns:48px minmax(0,1fr);grid-template-rows:minmax(84px,1fr) 33px 15px;gap:0 7px;padding:0;margin:0}
+  .hand-top{grid-column:1;grid-row:1/4;min-width:0}.hand-top #myRole{margin-bottom:4px}.hand-top .role-mini{width:41px;min-width:41px;height:59px}.hand-title h2{font-size:.69rem}.hand-title .muted{font-size:.65rem}.hand-title>.row{gap:2px}.relation-strip{font-size:.58rem;gap:0;line-height:1.5}.relation-strip span{display:block;width:100%}
+  .hand{grid-row:1;grid-column:2;min-width:0;min-height:0;height:100%;gap:8px;padding:12px 5px 9px;align-items:center;justify-content:safe center}
+  .hand-wrap{flex-basis:62px;padding-bottom:15px}.hand-card{width:62px;height:89px}.card-position{font-size:.61rem}
+  .hand-tools{grid-column:2;grid-row:2;gap:8px;margin:0;align-items:center}.hand-tools button{min-height:31px;font-size:.63rem;padding:3px 12px}.hand-note{grid-column:2;grid-row:3;font-size:.57rem;line-height:1.3;align-self:center}
+  .winner-note{grid-area:status;z-index:1;font-size:.7rem;padding:2px 5px;line-height:1.2;margin:0}
+  .debug{width:calc(100% - 24px);padding:0 0 4px;margin:0 auto}.debug summary{font-size:.65rem}.debug-content{padding:9px;gap:7px}.debug-content button{min-height:38px}.debug-detail{font-size:.7rem;margin-top:5px}
+  .screen-hint{max-width:none;margin:0;padding:6px 14px;font-size:.72rem}
+  dialog{max-height:calc(100svh - 12px - env(safe-area-inset-bottom,0px));max-width:calc(100vw - 28px - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px));border-radius:9px}
+  .dialog-head,.rules-dialog .dialog-head{position:sticky;top:0;background:var(--surface);padding:10px 16px;z-index:2}.dialog-head h2{font-size:1rem}.dialog-head .eyebrow{display:none}.dialog-body{padding:10px 16px}.dialog-body p{font-size:.82rem}.dialog-footer{position:sticky;bottom:0;background:var(--surface);padding:8px 16px;z-index:2}.dialog-footer button{min-height:42px}
+  .field{margin-top:8px;font-size:.82rem}.field input{padding:8px;margin-top:5px}.player-picker{margin-top:8px;gap:10px}.player-option{padding:10px 6px;min-height:54px}.player-option strong{font-size:1.05rem;margin-bottom:2px}.player-option span{font-size:.7rem}.seed-row button{padding:9px;font-size:.8rem}.seed-row input{max-width:100%}
+  .rules-body{font-size:.82rem}.rules-body h3{margin:10px 0 4px}.logs-dialog .logs{max-height:64svh;font-size:.8rem}.import-area{min-height:110px}.test-output{max-height:55svh;font-size:.75rem}
+}
+@media(orientation:landscape) and (max-height:360px) and (max-width:1200px){
+  .arena{grid-template-rows:18px minmax(63px,.65fr) minmax(129px,1.35fr);gap:3px 8px;padding:4px 7px;min-height:232px}
+  .opponent .role-mini,.arena[data-players="2"] .opponent .role-mini{width:29px;min-width:29px;height:42px}.backs{max-height:23px}.back,.arena[data-players="2"] .back{height:23px;flex-basis:16px;margin-right:-11px}
+  .hand-card{width:58px;height:83px}.hand-wrap{flex-basis:58px}.hand{gap:7px;padding-top:9px}
+}
+
+</style>
+</head>
+<body>
+<header class="game-toolbar"><div class="row"><span class="brand-mark" aria-hidden="true">♠♦</span><h1>花色纸牌</h1></div><nav class="table-tools" aria-label="对局工具"><button class="soft" id="fullscreenButton" aria-label="全屏与手机游玩说明" aria-pressed="false">全屏</button><button class="soft" id="soundButton" aria-label="关闭音效" aria-pressed="true"><span aria-hidden="true">♪</span> <span id="soundLabel">音效开</span></button><button class="soft" id="logsButton">日志</button><button class="soft" id="restartButton">重开</button><button class="help-button" id="rulesButton" aria-label="查看游戏规则" title="游戏规则">?</button></nav></header>
+<aside id="rotateHint" class="rotate-hint" role="status"><span aria-hidden="true">↻</span> 将手机横过来，牌桌更宽。若方向不变，请关闭手机的竖排方向锁定。</aside>
+<p id="screenHint" class="screen-hint hidden" role="status"></p>
+<div id="errorBanner" class="error-banner hidden" role="alert"></div>
+<main class="arena table-shell" aria-label="牌桌">
+<div id="winnerBanner" class="winner-note hidden" role="status"></div>
+<div class="table-top"><strong id="tableStatus">准备开局</strong><span class="turn-meta">第 <span id="turnNumber">01</span> 回合</span><span class="small muted" id="seatOrder">顺时针行动</span></div>
+<div class="opponents" id="opponents"></div>
+<div class="middle-zone">
+<div class="pool"><div class="pool-graphic" aria-hidden="true">♦</div><p>弃牌/备牌堆</p><strong id="poolCount">18 张</strong></div>
+<div class="center-play"><div class="settlement"><div class="section-label"><span id="pendingTitle">临时结算区</span><span class="pill" id="pendingCount">0 张</span></div><div class="settlement-cards" id="pendingCards"><span class="small muted">等待出牌</span></div><p class="small muted" id="pendingNote">待结算牌不参与本次补牌。</p></div><section class="action-ribbon" aria-label="当前行动"><h2 id="actorLabel" class="sr-only">准备开局</h2><div class="action-body" id="actions" aria-live="polite"></div><p id="actionHint" class="sr-only">先完成主牌效果，再检查胜利。</p></section></div>
+<div class="role-deck"><div id="roleDeck" class="pool-graphic" aria-hidden="true"></div><p>角色牌组</p><strong id="roleTotal"></strong><div id="roleCounts" class="role-counts" aria-label="角色牌组可用花色"></div><details class="role-rack"><summary>查看角色牌</summary><div class="role-popover"><p class="small muted">明亮可用 · 淡色在用</p><div class="roles" id="rolePool"></div></div></details></div>
+</div>
+<section class="hand-section" aria-label="我的手牌"><div class="hand-top"><div id="myRole"></div><div class="hand-title"><div class="row wrap"><h2>我 <span id="handCount" class="muted"></span></h2><span id="mySkip" class="pill skip-pill hidden"></span></div><div class="relation-strip" id="myRelations"></div></div></div><div class="hand" id="hand"></div><div class="hand-tools" id="handTools"><button data-action="sort-suit" disabled>按花色理牌</button><button data-action="sort-value" disabled>按点数理牌</button></div><p class="hand-note" id="handNote">每次只出一张 · 点击可用手牌</p></section>
+</main>
+<details class="debug" id="debugPanel"><summary>调试与存档</summary><div class="debug-content"><button id="pauseButton">暂停 AI</button><button id="stepButton">AI 单步</button><label class="check-label"><input id="showHands" type="checkbox">显示所有手牌</label><button id="exportButton">导出 JSON</button><button id="importButton">导入 JSON</button><button id="selfTestButton">运行内置检查</button><span class="check-state" id="integrity">等待开局</span></div><p class="debug-detail" id="seedInfo"></p><p class="debug-detail">单步推进一次出牌或无法接牌时的让过。导出包含完整隐藏牌与随机状态，用于复现；导入通过校验后暂停 AI。调试显示不改变 AI 可读取的信息。</p></details>
+<dialog id="logsDialog" class="logs-dialog" aria-labelledby="logsTitle"><div class="dialog-head row between"><h2 id="logsTitle">公开行动日志 <span id="logCount" class="small muted">0 条</span></h2><button data-close="logsDialog">返回对局</button></div><ol class="logs" id="logs"></ol></dialog>
+<dialog id="setupDialog" aria-labelledby="setupTitle"><div class="dialog-head"><div class="eyebrow" style="margin-bottom:10px">LOCAL TABLE / V3.0</div><h2 id="setupTitle">开一桌花色纸牌</h2></div><div class="dialog-body"><p>单张比大，A 最小、10 最大。本命选择换下家角色或制约，逆色按奇偶补牌。率先合法清空手牌即获胜。</p><div class="field">选择人数</div><div class="player-picker" id="playerPicker"><button class="player-option" data-count="2" aria-pressed="false"><strong>2 人</strong><span>我 + 1 名 AI · 各 12 张</span></button><button class="player-option selected" data-count="3" aria-pressed="true"><strong>3 人</strong><span>我 + 2 名 AI · 各 8 张</span></button><button class="player-option" data-count="4" aria-pressed="false"><strong>4 人</strong><span>我 + 3 名 AI · 各 6 张</span></button></div><div class="seed-row"><label class="field">固定随机种子<input id="seedInput" value="flower-2026" maxlength="120" spellcheck="false" autocomplete="off"></label><button id="randomSeed">换一个</button></div><p class="small muted" style="margin-top:11px">人数、种子和操作相同，即可复现相同对局。先手随机。</p></div><div class="dialog-footer"><button id="cancelSetup" class="soft">返回牌桌</button><button id="startButton" class="primary">开始对局</button></div></dialog>
+<dialog id="rulesDialog" class="rules-dialog" aria-labelledby="rulesTitle"><div class="dialog-head row between"><h2 id="rulesTitle">游戏规则 · V3.0</h2><button id="returnFromRules" data-close="rulesDialog" class="primary">返回对局</button></div><div class="dialog-body rules-body">
+<h3>一人一次，只出一张</h3><p>普通牌要大于本轮最近一张普通主牌：A=1，10 最大。大小王不比大小，直接出并发动原有技能，不改变最近普通牌的比较点数和出牌者。接不上只能让过；其他人依次尝试，全部接不了才由最大普通牌出牌者重新领出。本轮尚未出普通牌时不限点数。</p>
+<h3>看自己的角色花色</h3><ul><li><strong>顺色异花：</strong>只出牌。</li><li><strong>本命（完全同花色）：</strong>更换下家角色花色；或当下家角色为异色时，让其跳过下一次完整行动。二选一。</li><li><strong>逆色：</strong>奇数补 1 张，偶数补 2 张，不能主动放弃。牌池不足取完现有牌，主牌不能被本次抽回。</li></ul>
+<h3>大小王</h3><p>大王先离手，再与其他玩家中手牌最少的一人交换剩余整手牌；并列由出牌者选。最后一张大王不交换。小王为自己更换可用的不同角色花色。角色更换取牌组中该花色第一张，旧角色退回末尾。</p>
+<h3>结算与获胜</h3><p>主牌离手，完成补牌、换角色或换手牌等必要效果后才检查胜利，再回收主牌并推进行动。手牌可理牌；无附带弃牌、同点数响应或额外弃牌奖励。没有正式回合上限。</p>
+<details><summary>展开完整规则书</summary><pre id="fullRules"></pre></details></div></dialog>
+<dialog id="importDialog" aria-labelledby="importTitle"><div class="dialog-head row between"><h2 id="importTitle">导入对局 JSON</h2><button data-close="importDialog">关闭</button></div><div class="dialog-body"><p>选择此前导出的存档，或直接粘贴 JSON。完整通过状态检查后才替换当前对局。</p><label class="field">选择 JSON 文件<input id="importFile" type="file" accept=".json,application/json"></label><textarea id="importText" class="import-area" aria-label="对局 JSON" placeholder="在这里粘贴 JSON…" spellcheck="false"></textarea><div id="importError" class="import-error" role="alert"></div></div><div class="dialog-footer"><button id="confirmImport" class="primary">校验并载入</button></div></dialog>
+<dialog id="testDialog" aria-labelledby="testTitle"><div class="dialog-head row between"><h2 id="testTitle">内置规则检查</h2><button data-close="testDialog">关闭</button></div><div class="dialog-body"><p class="small" style="margin-bottom:14px">在独立状态中检查，不改变当前对局。完整开发测试结果见交付报告。</p><pre class="test-output" id="testOutput"></pre></div></dialog>
+<div class="notice hidden" id="notice" role="status"></div>
+<script id="card-rules">
+/* RULE ENGINE — no DOM, no animation callbacks */
+(function(root){
+'use strict';
+const SUITS=Object.freeze(['H','S','D','C']),SYMBOL={H:'♥',S:'♠',D:'♦',C:'♣'},COLOR={H:0,D:0,S:1,C:1};
+const CARDS={},ACTION_IDS=[],ROLE_IDS=[];
+for(const suit of SUITS){for(let value=1;value<=10;value++){const rank=value===1?'A':String(value),id=suit+value;CARDS[id]=Object.freeze({id,suit,rank,value,kind:'action',label:SYMBOL[suit]+rank});ACTION_IDS.push(id);}for(const rank of ['J','Q','K']){const id=suit+rank;CARDS[id]=Object.freeze({id,suit,rank,value:null,kind:'role',label:SYMBOL[suit]+rank});ROLE_IDS.push(id);}}
+for(const [id,kind,label] of [['jokerSmall','small','小王'],['jokerBig','big','大王']]){CARDS[id]=Object.freeze({id,suit:null,rank:label,value:null,kind,label});ACTION_IDS.push(id);}
+Object.freeze(CARDS);Object.freeze(ACTION_IDS);Object.freeze(ROLE_IDS);
+const ACTION_SET=new Set(ACTION_IDS),ROLE_SET=new Set(ROLE_IDS);
+const assert=(ok,message)=>{if(!ok)throw new Error('状态/动作错误：'+message);},copy=x=>JSON.parse(JSON.stringify(x)),integer=(x,a,b)=>Number.isSafeInteger(x)&&x>=a&&x<=b,object=x=>x!==null&&typeof x==='object'&&!Array.isArray(x),exact=(x,keys)=>object(x)&&Object.keys(x).length===keys.length&&keys.every(k=>Object.prototype.hasOwnProperty.call(x,k)),name=i=>i===0?'你':'AI '+i;
+function relation(a,b){return !SUITS.includes(a)||!SUITS.includes(b)?'neutral':COLOR[a]===COLOR[b]?'attract':'repel';}
+function seedHash(seed){let n=2166136261;for(let i=0;i<seed.length;i++){n^=seed.charCodeAt(i);n=Math.imul(n,16777619);}return n>>>0;}
+function random32(s){s.rng=(s.rng+0x6D2B79F5)>>>0;let n=s.rng;n=Math.imul(n^(n>>>15),n|1);n^=n+Math.imul(n^(n>>>7),n|61);return(n^(n>>>14))>>>0;}
+function randomIndex(s,count){assert(integer(count,1,0xFFFFFFFF),'随机抽取没有可用位置。');const limit=0x100000000-0x100000000%count;let n;do{n=random32(s);}while(n>=limit);return n%count;}
+function shuffle(s,input){const out=input.slice();for(let i=out.length-1;i>0;i--){const j=randomIndex(s,i+1);[out[i],out[j]]=[out[j],out[i]];}return out;}
+function log(s,actor,text,event){const entry={seq:s.log.length+1,turn:s.turn,actor,text};if(event)entry.event=event;s.log.push(entry);}
+// Only physical card zones count. Public chain/lastPlay IDs are history metadata.
+function audit(s){const a=[...s.pool,...s.pending.map(p=>p.id),...s.players.flatMap(p=>p.hand)],r=[...s.rolePool,...s.players.map(p=>p.role)];assert(a.length===42&&a.every(id=>ACTION_SET.has(id))&&new Set(a).size===42,'42张行动牌必须完整唯一，不能混入角色牌。');assert(r.length===12&&r.every(id=>ROLE_SET.has(id))&&new Set(r).size===12,'12张角色牌必须完整唯一，不能混入行动牌。');for(const p of s.pending)assert(exact(p,['id','kind','owner'])&&p.kind==='main'&&p.owner===s.current,'待结算只能持有当前玩家的本次主牌。');}
+function validate(s){
+ assert(exact(s,['version','seed','rng','players','rolePool','pool','current','turn','phase','pending','winner','log','chain','lastPlay']),'存档字段不完整或含旧规则字段。');
+ assert(s.version===6,'V3使用存档版本6；旧档请用对应封存版本打开，不自动转换。');
+ assert(typeof s.seed==='string'&&integer(s.rng,0,0xFFFFFFFF),'种子或32位随机状态非法。');
+ assert(Array.isArray(s.players)&&integer(s.players.length,2,4),'玩家必须为2—4人。');const count=s.players.length;
+ for(const p of s.players)assert(exact(p,['hand','role','skip'])&&Array.isArray(p.hand)&&ROLE_SET.has(p.role)&&typeof p.skip==='boolean','玩家手牌、角色或制约标记非法。');
+ assert(integer(s.current,0,count-1)&&integer(s.turn,1,Number.MAX_SAFE_INTEGER),'当前座位或回合号非法。');
+ assert(['main','ended'].includes(s.phase),'V3没有附带、奖励或同点响应阶段。');
+ assert(Array.isArray(s.pool)&&Array.isArray(s.rolePool)&&Array.isArray(s.pending),'牌池结构非法。');audit(s);
+ assert(s.pending.length===0,'稳定状态不能遗留待结算牌。');assert(!s.players[s.current].skip,'当前玩家不能持有未消费的制约标记。');
+ assert(exact(s.chain,['card','owner']),'接龙参考字段非法。');if(s.chain.card===null)assert(s.chain.owner===null,'新领出参考必须同时清空牌与玩家。');else{assert(ACTION_SET.has(s.chain.card)&&CARDS[s.chain.card].kind==='action'&&integer(s.chain.owner,0,count-1),'接龙只记录普通牌及其出牌者。');assert(!s.players[s.chain.owner].skip,'最近普通牌的出牌者不能同时带有制约标记。');assert(s.phase==='ended'||s.chain.owner!==s.current,'回到最后普通牌出牌者时必须已清空限制，重新领出。');}
+ if(s.lastPlay!==null)assert(exact(s.lastPlay,['actor','turn','card'])&&integer(s.lastPlay.actor,0,count-1)&&integer(s.lastPlay.turn,1,s.turn)&&ACTION_SET.has(s.lastPlay.card),'最近实际出牌记录非法。');
+ assert(s.winner===null||integer(s.winner,0,count-1),'赢家非法。');const empty=s.players.flatMap((p,i)=>p.hand.length===0?[i]:[]);assert(empty.length<=1,'多个玩家同时清手属于非法状态，不能判平局。');
+ if(s.phase==='ended')assert(empty.length===1&&empty[0]===s.current&&s.winner===s.current&&s.lastPlay!==null&&s.lastPlay.actor===s.current&&s.lastPlay.turn===s.turn,'结束状态必须记录当前玩家合法清手的主牌。');else assert(!empty.length&&s.winner===null,'进行中不能有空手或赢家。');
+ assert(Array.isArray(s.log),'日志必须为数组。');s.log.forEach((e,i)=>{assert(exact(e,['seq','turn','actor','text'])||exact(e,['seq','turn','actor','text','event']),'日志字段非法。');assert(e.seq===i+1&&integer(e.turn,1,s.turn)&&(e.actor===null||integer(e.actor,0,count-1))&&typeof e.text==='string','日志顺序、行动者或内容非法。');if('event'in e)assert(['play','yield','skip','relead'].includes(e.event)&&e.actor!==null,'公开事件非法。');});return true;
+}
+function newGame(options){
+ assert(object(options)&&integer(options.count,2,4),'人数必须为2、3或4。');const seed=options.seed===undefined?'V3':String(options.seed),s={version:6,seed,rng:seedHash(seed),players:[],rolePool:[],pool:[],current:0,turn:1,phase:'main',pending:[],winner:null,log:[],chain:{card:null,owner:null},lastPlay:null};
+ s.current=randomIndex(s,options.count);const roles=shuffle(s,ROLE_IDS);for(let i=0;i<options.count;i++)s.players.push({hand:[],role:roles.shift(),skip:false});s.rolePool=roles;
+ const a=shuffle(s,ACTION_IDS);for(let i=0;i<24;i++)s.players[(s.current+i)%options.count].hand.push(a[i]);s.pool=a.slice(24);
+ log(s,null,options.count+'人局开始：轮流发出24张行动牌，弃牌/备牌堆18张；'+name(s.current)+'首次领出。');s.players.forEach((p,i)=>log(s,null,name(i)+'的公开角色为'+CARDS[p.role].label+'，手牌'+p.hand.length+'张。'));validate(s);return s;
+}
+// Explicit whitelist: no other hand IDs, pool contents, seed, RNG or role-pool order.
+function observe(s,seat){validate(s);assert(integer(seat,0,s.players.length-1),'观察座位非法。');const roleCounts={H:0,S:0,D:0,C:0};for(const id of s.rolePool)roleCounts[CARDS[id].suit]++;return{seat,hand:s.players[seat].hand.slice(),players:s.players.map(p=>({count:p.hand.length,role:p.role,skip:p.skip})),roleCounts,poolCount:s.pool.length,current:s.current,turn:s.turn,phase:s.phase,pending:s.pending.map(p=>({...p})),winner:s.winner,log:s.log.map(e=>({...e})),chain:{...s.chain},lastPlay:s.lastPlay===null?null:{...s.lastPlay}};}
+function legalActions(obs){
+ assert(object(obs)&&Array.isArray(obs.players)&&Array.isArray(obs.hand),'观察信息结构非法。');if(obs.phase==='ended'||obs.winner!==null||obs.seat!==obs.current)return[];
+ assert(obs.phase==='main'&&obs.players[obs.seat]&&ROLE_SET.has(obs.players[obs.seat].role),'当前阶段或角色非法。');
+ const out=[],seat=obs.seat,next=(seat+1)%obs.players.length,ownSuit=CARDS[obs.players[seat].role].suit,nextSuit=CARDS[obs.players[next].role].suit,limit=obs.chain.card===null?0:CARDS[obs.chain.card].value;
+ const roleSuits=target=>SUITS.filter(suit=>suit!==CARDS[obs.players[target].role].suit&&obs.roleCounts[suit]>0);
+ for(const id of obs.hand){assert(ACTION_SET.has(id),'手牌含非法牌。');const c=CARDS[id];
+  if(c.kind==='small'){for(const suit of roleSuits(seat))out.push({type:'play',card:id,suit});}
+  else if(c.kind==='big'){if(obs.hand.length===1)out.push({type:'play',card:id});else{const min=Math.min(...obs.players.filter((p,i)=>i!==seat).map(p=>p.count));obs.players.forEach((p,target)=>{if(target!==seat&&p.count===min)out.push({type:'play',card:id,target});});}}
+  else if(c.value>limit){if(c.suit===ownSuit){for(const suit of roleSuits(next))out.push({type:'play',card:id,branch:'nativeRole',suit});if(relation(nextSuit,c.suit)==='repel')out.push({type:'play',card:id,branch:'nativeSuppress'});}else out.push({type:'play',card:id,branch:relation(ownSuit,c.suit)==='attract'?'plain':'repelDraw'});}
+ }
+ return out.length?out:[{type:'yield'}];
+}
+function recycle(s){s.pool.push(...s.pending.map(p=>p.id));s.pending=[];audit(s);}
+function replaceRole(s,target,suit){const index=s.rolePool.findIndex(id=>CARDS[id].suit===suit);assert(index>=0&&CARDS[s.players[target].role].suit!==suit,'角色花色不可选。');const old=s.players[target].role;s.players[target].role=s.rolePool.splice(index,1)[0];s.rolePool.push(old);audit(s);log(s,s.current,name(target)+'更换角色：'+CARDS[old].label+' → '+CARDS[s.players[target].role].label+'。');}
+function drawCards(s,requested){const actual=Math.min(requested,s.pool.length),p=s.players[s.current];for(let i=0;i<actual;i++){p.hand.push(s.pool.splice(randomIndex(s,s.pool.length),1)[0]);audit(s);}log(s,s.current,'逆色主牌：'+(requested===1?'奇数补1':'偶数补2')+'，实际随机补'+actual+'张，追加手牌右侧。'+(actual<requested?'回收堆不足，取完现有牌后停止。':''));}
+function checkWinner(s){const empty=s.players.flatMap((p,i)=>p.hand.length===0?[i]:[]);assert(empty.length<=1,'多个玩家同时清手。');if(!empty.length)return false;assert(empty[0]===s.current,'非当前玩家异常清手。');s.winner=s.current;recycle(s);s.phase='ended';log(s,s.current,name(s.current)+'完成主牌必要结算后手牌归零，获胜！本局立即结束。');return true;}
+function finishTurn(s){recycle(s);s.current=(s.current+1)%s.players.length;s.turn++;while(s.players[s.current].skip){s.players[s.current].skip=false;log(s,s.current,name(s.current)+'受本命牌制约，跳过一次行动；标记解除。','skip');s.current=(s.current+1)%s.players.length;s.turn++;}s.phase='main';if(s.chain.owner===s.current){s.chain={card:null,owner:null};log(s,s.current,'其余玩家未接出更大的普通牌；'+name(s.current)+'重新领出，大小限制清空。','relead');}}
+function resolveYield(s){finishTurn(s);}
+function resolveJokerChain(s){log(s,s.current,s.chain.card===null?'此前没有普通牌，王不设置大小限制；下一位可以自由领出普通牌。':'王不改变普通牌接龙参考：仍须大于'+CARDS[s.chain.card].label+'；依次无人接出时，由'+name(s.chain.owner)+'重新领出。');}
+function apply(state,actor,action){
+ validate(state);assert(state.phase!=='ended'&&integer(actor,0,state.players.length-1)&&actor===state.current,'仅当前未结束行动者可操作。');
+ const legal=legalActions(observe(state,actor));assert(legal.some(a=>exact(action,Object.keys(a))&&Object.keys(a).every(k=>a[k]===action[k])),'动作非法或含多余/缺失字段。');
+ const s=copy(state),p=s.players[actor],next=(actor+1)%s.players.length;
+ if(action.type==='yield'){log(s,actor,name(actor)+'没有可以接出的牌。','yield');resolveYield(s);validate(s);return s;}
+ const c=CARDS[action.card],original=p.hand.length;p.hand.splice(p.hand.indexOf(action.card),1);s.pending.push({id:action.card,kind:'main',owner:actor});audit(s);s.lastPlay={actor,turn:s.turn,card:action.card};log(s,actor,name(actor)+'打出主牌'+c.label+'。','play');
+ if(c.kind==='big'){if(original===1)log(s,actor,'大王是出牌前唯一手牌：正常弃出，不交换。');else{const target=s.players[action.target],own=p.hand.length,theirs=target.hand.length;[p.hand,target.hand]=[target.hand,p.hand];audit(s);log(s,actor,name(actor)+'与'+name(action.target)+'交换剩余手牌，获得'+theirs+'张、交出'+own+'张；大王不参与交换，角色与制约标记不交换。');}resolveJokerChain(s);}
+ else if(c.kind==='small'){replaceRole(s,actor,action.suit);resolveJokerChain(s);}
+ else{s.chain={card:action.card,owner:actor};if(action.branch==='nativeRole')replaceRole(s,next,action.suit);else if(action.branch==='nativeSuppress'){s.players[next].skip=true;log(s,actor,'本命制约：'+name(next)+'出牌瞬间的角色'+CARDS[s.players[next].role].label+'与主牌逆色，下次行动跳过一次；不同时换角色。');}else if(action.branch==='repelDraw')drawCards(s,c.value%2===1?1:2);else assert(action.branch==='plain','普通主牌缺少有效分支。');}
+ audit(s);if(!checkWinner(s))finishTurn(s);validate(s);return s;
+}
+function reorder(state,actor,ids){validate(state);assert(state.phase==='main'&&integer(actor,0,state.players.length-1)&&actor===state.current,'仅当前正常行动者可以整理手牌。');const hand=state.players[actor].hand;assert(Array.isArray(ids)&&ids.length===hand.length&&new Set(ids).size===hand.length&&ids.every(id=>hand.includes(id)),'整理必须是本人完整手牌的排列，不可增减、重复或混入其他牌。');const s=copy(state);s.players[actor].hand=ids.slice();validate(s);return s;}
+root.CardRules=Object.freeze({SUITS,CARDS,ACTION_IDS,ROLE_IDS,relation,newGame,validate,observe,legalActions,apply,reorder});
+})(globalThis);
+
+</script>
+<script id="card-ai">
+/* LOCAL AI — accepts only a public observation and its own hand */
+/* V3 local heuristic: only the acting player's hand and public observation. */
+(function(root){
+  'use strict';
+  const R=root.CardRules,card=id=>R.CARDS[id],roleSuit=player=>card(player.role).suit;
+  const clamp=(value,low,high)=>Math.max(low,Math.min(high,value));
+
+  function ordinaryValue(id,suit){
+    const c=card(id);
+    if(R.relation(suit,c.suit)==='repel')return c.value%2?-.3:-.8;
+    // Native cards retain a useful choice; low friendly cards remain easy openers.
+    return (c.suit===suit?1.3:.8)+(c.value<=3?.12:0)+(c.value>=8?.08:0);
+  }
+  function handValue(hand,suit,players,seat){
+    const least=Math.min(...players.filter((_,i)=>i!==seat).map(p=>p.count));
+    let value=0;
+    for(const id of hand){
+      const c=card(id);
+      if(c.kind==='big')value+=hand.length===1?.8:clamp((hand.length-1-least)*.25,-.8,3);
+      else if(c.kind==='small')value+=.5;
+      else value+=ordinaryValue(id,suit);
+    }
+    return value;
+  }
+  function context(obs){
+    // This estimates an unknown card from the public deck minus our own hand.
+    // It never assigns a particular card to an opponent or to the draw pool.
+    const own=new Set(obs.hand),unseen=R.ACTION_IDS.filter(id=>!own.has(id)),roleEstimate={};
+    for(const suit of R.SUITS){
+      let value=0;
+      for(const id of unseen)if(card(id).kind==='action')value+=ordinaryValue(id,suit);
+      roleEstimate[suit]=value/Math.max(1,unseen.length);
+    }
+    return {roleEstimate};
+  }
+  function evaluate(obs,action,estimate){
+    if(action.type==='yield')return {win:0,score:0,reason:'没有合法可接主牌，按规则引擎的断接流程结束本次行动。'};
+    if(action.type!=='play')throw new Error('V3 AI 收到未知动作。');
+    const seat=obs.seat,next=(seat+1)%obs.players.length,main=card(action.card);
+    const players=obs.players.map(p=>({...p})),remaining=obs.hand.filter(id=>id!==action.card);
+    let suit=roleSuit(players[seat]),afterCount=remaining.length,quality=null,adjustment=0;
+    let reason='使用合法可接牌，兼顾剩余顺色、本命牌和后续可接的高牌。';
+    if(main.kind==='big'){
+      if(obs.hand.length===1)reason='最后一张大王按普通牌弃出，不交换。';
+      else{
+        afterCount=players[action.target].count;
+        const given=remaining.length;
+        // The exchanged hand is hidden. Its value uses public counts only.
+        quality=0;
+        if(given<=2)adjustment-=(given===1?12:5)*(action.target===next?1:.7);
+        reason='大王先离手，再根据公开手牌数量与最少手牌目标交换，不猜读换来的牌。';
+      }
+    }else if(main.kind==='small'){
+      suit=action.suit;
+      reason='小王先离手，依据自己的剩余手牌选择可用的新角色花色。';
+    }else if(action.branch==='repelDraw'){
+      const drawn=Math.min(main.value%2?1:2,obs.poolCount);
+      afterCount+=drawn;
+      // Unknown draws add to the exact count but do not become invented cards.
+      reason='逆色主牌按奇数补 1 张、偶数补 2 张；从当前牌池补完后才检查清手。';
+    }else if(action.branch==='nativeRole'){
+      const oldSuit=roleSuit(players[next]);
+      adjustment+=(estimate.roleEstimate[oldSuit]-estimate.roleEstimate[action.suit])*players[next].count*.8;
+      reason='本命牌更换固定下家的角色；仅用自己的牌与公开牌组估计收益。';
+    }else if(action.branch==='nativeSuppress'){
+      if(!players[next].skip)adjustment+=players[next].count<=2?6:players[next].count===3?4:2;
+      reason='本命牌制约逆色下家一次；优先阻止手牌较少的下家，不叠加已有制约。';
+    }else if(action.branch!=='plain')throw new Error('V3 普通牌缺少合法效果分支。');
+    if(afterCount===0)return {win:1,score:100000,reason:'主牌全部必要效果完成后可以合法清手，优先获胜。'};
+    if(quality===null)quality=handValue(remaining,suit,players,seat);
+    if(main.kind==='action'){
+      // Prefer the lowest legal connector and retain higher cards. A high
+      // threshold also has value against an unsuppressed near-winning next seat.
+      adjustment-=main.value*.22;
+      if(!players[next].skip&&action.branch!=='nativeSuppress'&&players[next].count<=2)adjustment+=main.value*(players[next].count===1?.32:.1);
+    }
+    return {win:0,score:(obs.hand.length-afterCount)*14+quality+adjustment,reason};
+  }
+  function available(obs){
+    return obs&&obs.phase==='main'&&obs.winner===null&&obs.seat===obs.current?R.legalActions(obs):[];
+  }
+  root.CardAI=Object.freeze({
+    choose(obs){
+      const actions=available(obs);if(!actions.length)return null;
+      const estimate=context(obs);let best=null;
+      for(const action of actions){
+        const rating=evaluate(obs,action,estimate);
+        if(!best||rating.win>best.win||rating.win===best.win&&rating.score>best.score)best={action,...rating};
+        if(rating.win)return {...action}; // All direct wins tie; keep legal order.
+      }
+      return {...best.action};
+    },
+    explain(obs,action){
+      const candidate=available(obs).find(item=>JSON.stringify(item)===JSON.stringify(action));
+      return candidate?evaluate(obs,candidate,context(obs)).reason:'当前没有此合法动作。';
+    }
+  });
+})(globalThis);
+
+</script>
+<script id="card-art">
+(function (root) {
+  'use strict';
+
+  // Original artwork on a 70 x 100 card grid. Numbers are 21 grid units high;
+  // court cards have mirrored portraits. No fonts or external images are used.
+  const FONT = Object.freeze({
+    A: ['01110', '11011', '11011', '11111', '11011', '11011', '11011'],
+    0: ['01110', '11011', '11011', '11011', '11011', '11011', '01110'],
+    1: ['00110', '01110', '00110', '00110', '00110', '00110', '01111'],
+    2: ['01110', '11011', '00011', '00110', '01100', '11000', '11111'],
+    3: ['11110', '00011', '00011', '01110', '00011', '00011', '11110'],
+    4: ['00011', '00111', '01111', '11011', '11111', '00011', '00011'],
+    5: ['11111', '11000', '11000', '11110', '00011', '11011', '01110'],
+    6: ['00110', '01100', '11000', '11110', '11011', '11011', '01110'],
+    7: ['11111', '00011', '00011', '00110', '00110', '01100', '01100'],
+    8: ['01110', '11011', '11011', '01110', '11011', '11011', '01110'],
+    9: ['01110', '11011', '11011', '01111', '00011', '00110', '01100'],
+    J: ['00111', '00011', '00011', '00011', '11011', '11011', '01110'],
+    Q: ['01110', '11011', '11011', '11011', '11111', '01110', '00011'],
+    K: ['11011', '11011', '11110', '11100', '11110', '11011', '11011'],
+    O: ['01110', '11011', '11011', '11011', '11011', '11011', '01110'],
+    E: ['11111', '11000', '11000', '11110', '11000', '11000', '11111'],
+    R: ['11110', '11011', '11011', '11110', '11100', '11010', '11011']
+  });
+  const LARGE = Object.freeze({
+    H: [
+      '0011110000111100', '0111111001111110', '1111111111111111',
+      '1111111111111111', '1111111111111111', '0111111111111110',
+      '0011111111111100', '0001111111111000', '0000111111110000',
+      '0000011111100000', '0000001111000000', '0000000110000000'
+    ],
+    S: [
+      '0000000110000000', '0000001111000000', '0000011111100000',
+      '0000111111110000', '0001111111111000', '0011111111111100',
+      '0111111111111110', '1111111111111111', '1111111111111111',
+      '0111110110111110', '0011100110011100', '0000000110000000',
+      '0000001111000000', '0000011111100000'
+    ],
+    D: [
+      '0000000110000000', '0000001111000000', '0000011111100000',
+      '0000111111110000', '0001111111111000', '0011111111111100',
+      '0111111111111110', '1111111111111111', '0111111111111110',
+      '0011111111111100', '0001111111111000', '0000111111110000',
+      '0000011111100000', '0000001111000000', '0000000110000000'
+    ],
+    C: [
+      '0000001111000000', '0000011111100000', '0000011111100000',
+      '0000001111000000', '0011101111011100', '0111111111111110',
+      '1111111111111111', '1111111111111111', '0111111111111110',
+      '0011110110111100', '0000000110000000', '0000000110000000',
+      '0000001111000000', '0000011111100000'
+    ]
+  });
+  const MINI = Object.freeze({
+    H: ['0110110', '1111111', '1111111', '0111110', '0011100', '0001000'],
+    S: ['0001000', '0011100', '0111110', '1111111', '1111111', '0101010', '0011100'],
+    D: ['0001000', '0011100', '0111110', '1111111', '0111110', '0011100', '0001000'],
+    C: ['0011100', '0011100', '1111111', '1111111', '0111110', '0001000', '0011100']
+  });
+  const INKS = Object.freeze({
+    red: { base: '#a13936', dark: '#752b2d', light: '#cb5748' },
+    black: { base: '#293b42', dark: '#19282e', light: '#56666a' }
+  });
+  const NAMES = Object.freeze({ H: '红心', S: '黑桃', D: '方块', C: '梅花' });
+  const COURTS = Object.freeze({ J: '侍从', Q: '皇后', K: '国王' });
+  const COURT_INKS = Object.freeze({
+    H: { robe: '#983d39', shade: '#682f30', light: '#c97762', gold: '#c89a4f', pale: '#f2dfac', hair: '#754a36', ground: '#e8c9ac' },
+    S: { robe: '#314b62', shade: '#203444', light: '#7896a3', gold: '#c19b50', pale: '#eadbad', hair: '#47382e', ground: '#cdd7cc' },
+    D: { robe: '#b35236', shade: '#793c2c', light: '#df9b64', gold: '#cca045', pale: '#f5df9d', hair: '#6b432d', ground: '#e8d5a5' },
+    C: { robe: '#3d5d4b', shade: '#293f35', light: '#8fa07b', gold: '#c1a259', pale: '#e8deb0', hair: '#4c3c2d', ground: '#d5d5b1' }
+  });
+  const faceCache = new Map();
+  let backCache = '';
+
+  function rect(x, y, width, height, fill) {
+    return '<rect x="' + x + '" y="' + y + '" width="' + width + '" height="' + height + '" fill="' + fill + '"/>';
+  }
+  function path(points, fill) { return '<path d="' + points + '" fill="' + fill + '"/>'; }
+  function pixels(rows, x, y, size, color) {
+    let result = '';
+    rows.forEach((row, rowIndex) => {
+      let start = -1;
+      for (let column = 0; column <= row.length; column++) {
+        if (row[column] === '1' && start < 0) start = column;
+        if (row[column] !== '1' && start >= 0) {
+          result += rect(x + start * size, y + rowIndex * size, (column - start) * size, size, color);
+          start = -1;
+        }
+      }
+    });
+    return result;
+  }
+  function letters(text, x, y, color, vertical, size = 1) {
+    return [...text].map((character, index) => pixels(FONT[character], x + (vertical ? 0 : index * 6 * size), y + (vertical ? index * 8 * size : 0), size, color)).join('');
+  }
+  function svg(label, artwork) {
+    return '<svg xmlns="http://www.w3.org/2000/svg" class="card-art" viewBox="0 0 70 100" width="70" height="100" shape-rendering="crispEdges" role="img" aria-label="' + label + '"><title>' + label + '</title>' + artwork + '</svg>';
+  }
+  function paper(id) {
+    let art = path('M4 0H66V2H68V4H70V96H68V98H66V100H4V98H2V96H0V4H2V2H4Z', '#49392c');
+    art += path('M4 2H66V4H68V96H66V98H4V96H2V4H4Z', '#c8b28a');
+    art += path('M5 3H65V5H67V94H65V96H5V94H3V5H5Z', '#f1e7c8');
+    art += rect(5, 3, 60, 1, '#fff4d6') + rect(3, 5, 1, 87, '#fff4d6');
+    art += rect(5, 94, 60, 2, '#d8c69e') + rect(65, 6, 2, 88, '#dfcea8');
+    // Repeatable, quiet wear stays near the edges, clear of symbols and ranks.
+    let hash = [...id].reduce((sum, character) => (sum * 31 + character.charCodeAt(0)) >>> 0, 7);
+    for (let i = 0; i < 13; i++) {
+      hash = (Math.imul(hash, 1664525) + 1013904223) >>> 0;
+      const x = 15 + hash % 42;
+      const y = i % 2 ? 6 + hash % 3 : 89 + hash % 4;
+      art += rect(x, y, 1 + (hash >>> 8) % 3, 1, i % 3 ? '#e4d7b4' : '#d6c39d');
+    }
+    art += rect(4, 29, 1, 5, '#dbcaa5') + rect(64, 68, 1, 3, '#dbcaa5');
+    return art;
+  }
+  function largeSuit(suit, ink) {
+    const rows = LARGE[suit];
+    const x = 19;
+    const y = 50 - rows.length;
+    let art = pixels(rows, x + 1, y + 2, 2, '#dac8a3');
+    art += pixels(rows, x, y, 2, ink.base);
+    rows.forEach((row, r) => {
+      [...row].forEach((value, c) => {
+        if (value !== '1') return;
+        if ((r < 4 && c < 8 && rows[Math.max(0, r - 1)][c] !== '1') || (r === 2 && c === 3)) {
+          art += rect(x + c * 2, y + r * 2, 2, 2, ink.light);
+        } else if (r >= rows.length - 3 || (c >= 11 && (row[c + 1] !== '1' || r >= rows.length / 2))) {
+          art += rect(x + c * 2, y + r * 2, 2, 2, ink.dark);
+        }
+      });
+    });
+    return art;
+  }
+  function ordinary(card) {
+    const ink = INKS[card.suit === 'H' || card.suit === 'D' ? 'red' : 'black'];
+    // 21-high corner numerals: a single rank is 15 wide, and "10" is 33 wide.
+    // The large suit lives between y=35..65, clear of both corner rank blocks.
+    const corner = letters(card.rank, 7, 7, ink.base, false, 3)
+      + pixels(MINI[card.suit], 8, 32, 1, ink.base);
+    return corner + '<g transform="rotate(180 35 50)">' + corner + '</g>' + largeSuit(card.suit, ink);
+  }
+  function courtProp(suit, p) {
+    let art = '';
+    // A separate, suit-specific object is held by every court figure.
+    if (suit === 'H') {
+      art += rect(22, 35, 1, 12, '#50674b');
+      art += path('M22 40H19V38H21V39H23V43H25V41H27V44H23Z', '#6c8055');
+      art += pixels(MINI.H, 19, 32, 1, '#a4443c');
+      art += rect(21, 33, 2, 2, '#e59a78');
+    } else if (suit === 'S') {
+      art += rect(19, 35, 9, 11, '#2a3538') + rect(20, 35, 7, 10, p.gold);
+      art += rect(21, 36, 5, 8, p.robe) + rect(20, 45, 7, 1, p.pale);
+      art += rect(23, 36, 1, 8, p.pale) + rect(21, 38, 2, 1, p.gold);
+    } else if (suit === 'D') {
+      art += rect(22, 37, 2, 11, p.gold);
+      art += pixels(MINI.D, 19, 31, 1, '#744433');
+      art += pixels(['00100', '01110', '11111', '01110', '00100'], 20, 32, 1, '#df9b58');
+      art += rect(22, 32, 1, 3, '#fff0b5') + rect(20, 39, 6, 2, p.gold);
+    } else {
+      art += rect(22, 33, 1, 14, '#827345');
+      art += path('M21 33H18V35H20V37H22V40H18V38H17V41H20V43H22V46H23V40H26V37H24V38H23V35H26V32H24V33Z', '#577450');
+      art += rect(19, 34, 1, 2, '#9da875') + rect(24, 33, 1, 2, '#9da875');
+    }
+    return art + rect(22, 43, 4, 4, '#d8ac7c') + rect(22, 43, 3, 1, '#f0ce9c');
+  }
+  function courtBust(rank, suit, p) {
+    const line = '#49382d', skin = '#e9c496', skinShade = '#c39470';
+    let art = '';
+    // Stepped shoulders, patterned robes and a different collar for each rank.
+    art += path('M27 34H43V36H48V39H51V50H19V39H22V36H27Z', line);
+    art += path('M27 36H43V38H47V41H49V50H21V41H24V38H27Z', p.robe);
+    art += rect(27, 39, 3, 11, p.shade) + rect(40, 38, 4, 12, p.shade);
+    art += rect(31, 36, 8, 14, p.gold) + rect(33, 39, 4, 11, p.pale);
+    if (rank === 'J') {
+      art += path('M25 36H29L46 49V50H40L24 39Z', p.gold);
+      art += path('M28 35H42V37H38V40H34V38H30Z', p.pale);
+      art += rect(40, 45, 5, 3, line) + rect(41, 46, 3, 1, p.pale);
+    } else if (rank === 'Q') {
+      art += path('M26 35H44V38H42V41H40V38H38V41H36V38H34V41H32V38H30V41H28V38H26Z', p.pale);
+      art += rect(33, 40, 4, 3, p.gold) + pixels(MINI[suit], 32, 42, 0.85, p.shade);
+      art += rect(25, 45, 3, 2, p.light) + rect(43, 44, 3, 2, p.light);
+    } else {
+      art += path('M24 35H46V39H43V41H40V39H37V41H34V39H31V41H28V39H24Z', p.pale);
+      art += rect(26, 36, 2, 2, line) + rect(32, 37, 2, 2, line) + rect(41, 36, 2, 2, line);
+      art += rect(20, 41, 3, 9, p.gold) + rect(47, 41, 3, 9, p.gold);
+      art += pixels(MINI[suit], 32, 43, 0.85, p.robe);
+    }
+    // A compact human face, with individual hair and clearly visible features.
+    if (rank === 'Q') {
+      art += path('M28 19H41V21H44V36H41V38H38V33H29V37H25V34H24V23H26V21H28Z', p.hair);
+      art += rect(25, 25, 2, 10, p.gold) + rect(42, 24, 1, 10, p.gold);
+    } else {
+      art += path('M28 20H42V23H44V30H41V35H28V32H25V24H28Z', p.hair);
+    }
+    art += rect(32, 32, 7, 5, skinShade);
+    art += path('M29 21H39V23H41V31H39V34H31V32H28V25H29Z', skin);
+    art += rect(29, 23, 2, 6, '#f5d8ad') + rect(39, 24, 2, 6, skinShade);
+    art += rect(29, 25, 3, 1, p.hair) + rect(36, 25, 3, 1, p.hair);
+    art += rect(30, 26, 2, 1, line) + rect(37, 26, 2, 1, line);
+    art += rect(34, 27, 1, 3, skinShade) + rect(34, 29, 2, 1, '#ab775a');
+    if (rank === 'K') {
+      art += path('M28 29H31V31H33V30H37V31H40V29H42V34H40V36H38V38H33V36H30V34H28Z', p.hair);
+      art += rect(32, 30, 7, 1, line) + rect(34, 32, 3, 1, '#d1a17c');
+      art += rect(33, 34, 1, 2, p.gold) + rect(38, 33, 1, 2, p.gold);
+    } else {
+      art += rect(32, 31, 5, 1, rank === 'Q' ? '#a05244' : '#9c7354');
+      if (rank === 'Q') art += rect(28, 28, 2, 1, '#dba384') + rect(39, 28, 2, 1, '#dba384') + rect(26, 29, 2, 3, p.gold) + rect(42, 29, 2, 3, p.gold);
+    }
+    // J: feathered page's cap. Q: tiara. K: a high, five-point royal crown.
+    if (rank === 'J') {
+      art += path('M24 20H26V18H30V16H38V17H41V19H43V22H26V24H24Z', line);
+      art += path('M26 19H30V18H39V19H41V21H27V22H26Z', p.robe);
+      art += rect(27, 21, 14, 2, p.gold) + rect(28, 21, 3, 1, p.pale);
+      art += path('M39 19V16H41V13H44V11H48V13H46V15H44V17H42V20Z', p.pale);
+      art += rect(42, 15, 1, 4, p.gold) + rect(45, 12, 2, 1, p.light);
+    } else if (rank === 'Q') {
+      art += path('M27 20V16H30V18H32V14H34V17H37V13H39V17H41V15H43V21H28Z', line);
+      art += path('M29 19V17H30V19H33V16H34V19H38V15H39V19H42V17H42V20H29Z', p.gold);
+      art += rect(28, 20, 15, 2, p.gold) + rect(30, 20, 3, 1, p.pale) + rect(37, 20, 3, 1, p.pale);
+      art += rect(36, 17, 2, 3, p.robe);
+    } else {
+      art += path('M24 12H27V15H30V12H33V16H36V11H39V15H42V12H45V20H43V22H26V20H24Z', line);
+      art += path('M26 14H27V17H31V14H32V18H37V13H38V17H43V14H43V20H26Z', p.gold);
+      art += rect(27, 19, 15, 3, p.gold) + rect(28, 19, 4, 1, p.pale) + rect(37, 19, 4, 1, p.pale);
+      art += rect(33, 19, 3, 2, p.robe) + rect(39, 19, 2, 2, p.light);
+      art += rect(47, 27, 2, 22, line) + rect(47, 29, 1, 19, p.gold);
+      art += pixels(MINI[suit], 44, 23, 1, p.gold) + rect(46, 28, 4, 2, p.pale);
+    }
+    art += courtProp(suit, p);
+    art += rect(27, 48, 17, 2, p.gold) + rect(31, 48, 3, 2, p.shade) + rect(38, 48, 3, 2, p.shade);
+    return art;
+  }
+  function court(card) {
+    const p = COURT_INKS[card.suit], ink = INKS[card.suit === 'H' || card.suit === 'D' ? 'red' : 'black'];
+    const corner = letters(card.rank, 6, 6, ink.base, false, 2) + pixels(MINI[card.suit], 7, 24, 1.1, ink.base);
+    let art = corner + '<g transform="rotate(180 35 50)">' + corner + '</g>';
+    art += rect(18, 10, 34, 80, '#66513b') + rect(19, 11, 32, 78, p.gold) + rect(20, 12, 30, 76, p.ground);
+    art += path('M21 14H25V16H23V20H21ZM45 13H49V20H47V16H45ZM21 80H23V84H25V86H21ZM45 84H47V80H49V87H45Z', p.pale);
+    // The two busts meet at a continuous belt, like traditional court cards.
+    const bust = courtBust(card.rank, card.suit, p);
+    art += '<g data-court="' + card.rank + '" data-suit="' + card.suit + '">' + bust + '<g transform="rotate(180 35 50)">' + bust + '</g></g>';
+    art += rect(19, 49, 32, 2, '#705137') + rect(20, 49, 30, 1, p.gold);
+    return art;
+  }
+  function bell(x, y, palette) {
+    return rect(x + 1, y, 4, 6, palette.dark) + rect(x, y + 1, 6, 4, palette.dark) + rect(x + 1, y + 1, 4, 4, palette.gold) + rect(x + 1, y + 1, 2, 1, palette.light) + rect(x + 2, y + 4, 2, 1, palette.dark);
+  }
+  function joker(big) {
+    const p = big
+      ? { main: '#ad4334', dark: '#672d2d', shade: '#84342e', gold: '#d3a044', light: '#f0ce79', pale: '#eadcaa' }
+      : { main: '#4c7184', dark: '#263d50', shade: '#365467', gold: '#a2aaa8', light: '#d5d9ce', pale: '#d9dbca' };
+    const corner = letters('JOKER', 6, 7, p.dark, true, 1.3);
+    let art = corner + '<g transform="rotate(180 35 50)">' + corner + '</g>';
+    art += pixels(big ? ['0001000','0001000','1111111','0001000','0010100','0100010','1000001'] : ['0001000','0101010','0101010','1001001','0001000','0001000','0011000'], 28, 5, 2, p.dark);
+    // A small original front-facing harlequin: three bell points, a smiling
+    // painted face, a stepped ruff, and a diamond on the checked costume.
+    art += path('M31 23H39V27H43V32H47V69H43V78H39V83H31V78H27V69H23V32H27V27H31Z', '#e4d5b2');
+    art += path('M24 45V38H20V34H17V28H23V31H27V35H32V42H40V35H44V31H48V27H53V34H50V39H46V45Z', p.dark);
+    art += path('M23 40V35H21V31H23V34H27V38H31V43H26V40Z', p.main);
+    art += path('M40 42V37H45V33H48V30H50V34H47V40H44V43Z', p.gold);
+    art += path('M30 42V30H32V25H38V30H40V42Z', p.dark);
+    art += path('M32 40V31H34V27H36V31H38V40Z', p.main);
+    art += rect(35, 30, 2, 10, p.shade);
+    art += bell(15, 24, p) + bell(32, 20, p) + bell(49, 23, p);
+    art += path('M26 41H44V44H47V57H44V62H40V65H30V62H26V58H23V46H26Z', p.dark);
+    art += rect(24, 47, 3, 8, '#bc946e') + rect(44, 47, 2, 8, '#bc946e');
+    art += path('M28 43H42V46H44V57H41V61H39V63H31V61H28V57H26V47H28Z', '#e7c794');
+    art += rect(28, 44, 13, 2, '#f3dab0') + rect(42, 47, 2, 10, '#c7a077');
+    art += rect(27, 40, 16, 4, p.gold) + rect(27, 43, 16, 1, p.dark);
+    art += rect(29, 40, 3, 2, p.light) + rect(36, 40, 3, 2, p.light);
+    art += rect(28, 47, 4, 2, p.dark) + rect(38, 47, 4, 2, p.dark);
+    art += rect(28, 50, 4, 3, '#38413d') + rect(38, 50, 4, 3, '#38413d');
+    art += rect(29, 50, 1, 1, '#fff2ce') + rect(39, 50, 1, 1, '#fff2ce');
+    art += rect(27, 54, 4, 3, '#bf7961') + rect(40, 54, 3, 3, '#bf7961');
+    art += rect(33, 52, 4, 4, big ? '#ac3a31' : '#71898a') + rect(33, 52, 2, 1, big ? '#df7960' : '#bac7b8');
+    art += rect(29, 58, 3, 2, p.dark) + rect(32, 60, 6, 2, p.dark) + rect(38, 58, 3, 2, p.dark) + rect(32, 58, 6, 2, '#fff0c8');
+    art += path('M26 65H44V67H49V71H45V73H41V71H37V73H33V71H29V73H25V71H21V67H26Z', p.dark);
+    art += rect(23, 67, 24, 3, p.pale) + rect(26, 66, 18, 2, p.light);
+    for (let i = 0; i < 3; i++) art += rect(25 + i * 8, 69, 4, 2, p.gold);
+    art += path('M24 73H30V72H40V73H46V77H49V83H44V86H26V83H21V77H24Z', p.dark);
+    art += rect(24, 76, 8, 6, p.gold) + rect(26, 73, 4, 4, p.main);
+    art += rect(32, 74, 12, 10, p.main) + rect(42, 76, 5, 6, p.gold);
+    art += rect(27, 80, 5, 4, p.main) + rect(40, 73, 4, 5, p.shade);
+    art += pixels(['00100', '01110', '11111', '01110', '00100'], 33, 77, 1, p.light);
+    art += rect(28, 85, 14, 1, '#c5ad84');
+    return art;
+  }
+
+  function face(id) {
+    if (!/^(?:[HSDC](?:[1-9]|10|J|Q|K)|jokerSmall|jokerBig)$/.test(id)) throw new Error('未知牌面ID');
+    if (faceCache.has(id)) return faceCache.get(id);
+    const card = root.CardRules && root.CardRules.CARDS[id];
+    if (!card) throw new Error('CardArt需要先加载CardRules');
+    const wild = id === 'jokerBig' || id === 'jokerSmall';
+    const label = id + '：' + (wild ? (id === 'jokerBig' ? '大王，红金像素小丑' : '小王，蓝灰像素小丑') : NAMES[card.suit] + card.rank + (card.kind === 'role' ? COURTS[card.rank] + '角色牌，镜像半身人像' : '行动牌'));
+    const result = svg(label, paper(id) + (wild ? joker(id === 'jokerBig') : card.kind === 'role' ? court(card) : ordinary(card)));
+    faceCache.set(id, result);
+    return result;
+  }
+  function back() {
+    if (backCache) return backCache;
+    let art = paper('card-back');
+    art += rect(6, 6, 58, 88, '#773c32');
+    art += rect(8, 8, 54, 84, '#c1935c');
+    art += rect(10, 10, 50, 80, '#233b45');
+    art += rect(12, 12, 46, 76, '#af7c4d');
+    art += rect(14, 14, 42, 72, '#71392f');
+    art += rect(16, 16, 38, 68, '#293f46');
+    const diamond = ['0001000', '0010100', '0100010', '1001001', '0100010', '0010100', '0001000'];
+    for (let row = 0; row < 6; row++) {
+      for (let col = 0; col < 3; col++) {
+        art += pixels(diamond, 20 + col * 12, 19 + row * 12, 1, (row + col) % 2 ? '#b7824f' : '#995540');
+      }
+    }
+    // Central woven medallion: concentric stepped diamonds and a tiny spade.
+    art += path('M32 32H38V36H42V40H46V46H50V54H46V60H42V64H38V68H32V64H28V60H24V54H20V46H24V40H28V36H32Z', '#c09560');
+    art += path('M33 35H37V39H41V43H45V47H47V53H43V59H39V63H35V65H33V61H29V57H25V51H23V49H27V43H31V39H33Z', '#71392f');
+    art += path('M33 40H37V44H41V48H43V52H39V56H37V60H33V56H29V52H27V48H31V44H33Z', '#283c43');
+    art += pixels(MINI.S, 31, 46, 1, '#dbb77b');
+    for (let i = 0; i < 7; i++) {
+      art += rect(10, 16 + i * 10, 2, 3, '#d1a871') + rect(58, 21 + i * 10, 2, 3, '#d1a871');
+    }
+    art += rect(17, 10, 4, 2, '#d1a871') + rect(49, 88, 4, 2, '#d1a871');
+    backCache = svg('card-back：复古像素牌背', art);
+    return backCache;
+  }
+
+  root.CardArt = Object.freeze({ face, back });
+})(globalThis);
+
+</script>
+<script id="card-ui">
+/* Offline synthesis only. Audio never reads or writes the game state or RNG. */
+(function(root){
+  'use strict';
+  let context=null, enabled=true, epoch=0;
+  const voices=new Set();
+  const Ctor=()=>root.AudioContext||root.webkitAudioContext;
+  function supported(){return typeof Ctor()==='function';}
+  function unlock(){
+    if(!enabled||!supported())return Promise.resolve(false);
+    try{
+      if(!context||context.state==='closed')context=new (Ctor())();
+      return context.state==='suspended'?Promise.resolve(context.resume()).then(()=>true,()=>false):Promise.resolve(true);
+    }catch(error){return Promise.resolve(false);}
+  }
+  function stop(){
+    epoch++;
+    for(const voice of [...voices]){
+      try{voice.gain.gain.cancelScheduledValues(0);voice.gain.gain.setValueAtTime(0,context.currentTime);}catch(error){}
+      try{voice.source.stop();}catch(error){}
+      voice.clean();
+    }
+  }
+  function attach(source,gain,extra=[]){
+    const voice={source,gain,clean(){voices.delete(voice);for(const node of [source,gain,...extra]){try{node.disconnect();}catch(error){}}}};
+    voices.add(voice);source.onended=voice.clean;return voice;
+  }
+  function tone(frequency,offset,duration,volume=.045,type='triangle',endFrequency=frequency){
+    const at=context.currentTime+offset;
+    const osc=context.createOscillator(),gain=context.createGain();
+    osc.type=type;osc.frequency.setValueAtTime(frequency,at);osc.frequency.exponentialRampToValueAtTime(Math.max(40,endFrequency),at+duration);
+    gain.gain.setValueAtTime(0,at);gain.gain.linearRampToValueAtTime(volume,at+.006);gain.gain.exponentialRampToValueAtTime(.0001,at+duration);
+    osc.connect(gain);gain.connect(context.destination);attach(osc,gain);osc.start(at);osc.stop(at+duration+.02);
+  }
+  function paper(offset=0,duration=.09,volume=.065){
+    const size=Math.max(1,Math.floor(context.sampleRate*duration));
+    const buffer=context.createBuffer(1,size,context.sampleRate),data=buffer.getChannelData(0);
+    // A fixed local texture, unrelated to all game randomness.
+    let n=0x175ad;
+    for(let i=0;i<size;i++){n^=n<<13;n^=n>>>17;n^=n<<5;data[i]=((n>>>0)/4294967296*2-1)*(1-i/size);}
+    const source=context.createBufferSource(),filter=context.createBiquadFilter(),gain=context.createGain(),at=context.currentTime+offset;
+    source.buffer=buffer;filter.type='highpass';filter.frequency.value=1300;
+    gain.gain.setValueAtTime(0,at);gain.gain.linearRampToValueAtTime(volume,at+.008);gain.gain.exponentialRampToValueAtTime(.0001,at+duration);
+    source.connect(filter);filter.connect(gain);gain.connect(context.destination);attach(source,gain,[filter]);source.start(at);source.stop(at+duration+.01);
+  }
+  function synth(kind){
+    if(voices.size>20)stop();
+    if(kind==='select')tone(720,0,.045,.025,'sine',940);
+    else if(kind==='play'){paper();tone(150,0,.08,.05,'triangle',85);}
+    else if(kind==='draw'){paper(0,.13);tone(430,.035,.09,.035,'sine',630);}
+    else if(kind==='swap'){paper(0,.16,.05);tone(270,0,.16,.035,'sine',820);tone(780,.12,.15,.03,'sine',330);}
+    else if(kind==='role'){tone(523,0,.1);tone(784,.065,.11);tone(1046,.13,.15,.025);}
+    else if(kind==='bonus'){paper();tone(760,.03,.09,.035);tone(1010,.09,.12,.03);}
+    else if(kind==='suppress'){paper();tone(290,0,.12,.045,'triangle',170);tone(160,.09,.15,.03,'sine',90);}
+    else if(kind==='start'){paper(0);paper(.09);paper(.18);tone(392,.14,.13,.035);tone(523,.24,.18,.035);}
+    else if(kind==='win'){[523.25,659.25,783.99,1046.5].forEach((frequency,i)=>tone(frequency,i*.11,i===3?.34:.18,.047));}
+  }
+  function play(kind){
+    if(!enabled||!context||context.state==='closed')return;
+    const ticket=epoch;
+    const run=()=>{if(!enabled||ticket!==epoch||context.state!=='running')return;try{synth(kind);}catch(error){stop();}};
+    try{if(context.state==='suspended')Promise.resolve(context.resume()).then(run,()=>{});else run();}catch(error){}
+  }
+  function setEnabled(value){enabled=!!value;if(!enabled)stop();return enabled;}
+  root.CardSound=Object.freeze({supported,unlock,play,stop,setEnabled,isEnabled:()=>enabled});
+})(globalThis);
+
+/* Display helpers only. No game rules, hands, randomness or network access. */
+(function(root){
+  'use strict';
+  const doc=root.document, orientation=root.screen&&root.screen.orientation;
+  let pending=false;
+  const isFullscreen=()=>!!doc.fullscreenElement;
+  const supported=()=>!!(doc.documentElement&&typeof doc.documentElement.requestFullscreen==='function'&&typeof doc.exitFullscreen==='function');
+  const unlock=()=>{try{if(orientation&&typeof orientation.unlock==='function')orientation.unlock();}catch(e){}};
+  async function toggle(){
+    if(pending)return{fullscreen:isFullscreen(),locked:false,reason:'busy'};
+    if(!supported())return{fullscreen:false,locked:false,reason:'unsupported'};
+    pending=true;
+    try{
+      if(isFullscreen()){
+        await doc.exitFullscreen();unlock();
+        return{fullscreen:isFullscreen(),locked:false,reason:'exited'};
+      }
+      await doc.documentElement.requestFullscreen();
+      // The user may have exited while the request was settling.
+      if(!isFullscreen())return{fullscreen:false,locked:false,reason:'cancelled'};
+      if(orientation&&typeof orientation.lock==='function'){
+        try{
+          await orientation.lock('landscape');
+          if(!isFullscreen()){unlock();return{fullscreen:false,locked:false,reason:'cancelled'};}
+          return{fullscreen:true,locked:true,reason:'entered'};
+        }catch(e){return{fullscreen:isFullscreen(),locked:false,reason:'rotate-manually'};}
+      }
+      return{fullscreen:true,locked:false,reason:'rotate-manually'};
+    }catch(e){return{fullscreen:isFullscreen(),locked:false,reason:'denied'};}
+    finally{pending=false;}
+  }
+  function onChange(callback){
+    if(typeof doc.addEventListener!=='function')return()=>{};
+    const listener=()=>{if(!isFullscreen())unlock();callback(isFullscreen());};
+    doc.addEventListener('fullscreenchange',listener);
+    return()=>doc.removeEventListener('fullscreenchange',listener);
+  }
+  root.CardScreen=Object.freeze({toggle,supported,isFullscreen,onChange});
+})(globalThis);
+
+(function () {
+  'use strict';
+  const R = globalThis.CardRules;
+  const A = globalThis.CardAI;
+  const Sound = globalThis.CardSound;
+  const Screen = globalThis.CardScreen;
+  const $ = id => document.getElementById(id);
+  const SUITS = { H: {symbol:'♥',name:'红心',meaning:'爱情'}, S:{symbol:'♠',name:'黑桃',meaning:'智慧'}, D:{symbol:'♦',name:'方块',meaning:'财富'}, C:{symbol:'♣',name:'梅花',meaning:'荣誉'} };
+  const REL = {attract:'顺色',repel:'逆色'};
+  const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const name = seat => seat === 0 ? '我' : 'AI ' + seat;
+  const suitText = suit => SUITS[suit].symbol + ' ' + SUITS[suit].name;
+  const red = id => ['H','D'].includes(R.CARDS[id].suit) || id === 'jokerBig';
+  const key = action => JSON.stringify(action);
+  let state = null, paused = false, halted = false, timer = null, epoch = 0;
+  let chosenCount = 3, selectedCard = null, selectedAction = null, recent = [], recentlySkipped=[];
+  let draft = {};
+  let noticeTimer = null, fileReadEpoch = 0;
+
+  function cancelAI() { epoch++; if (timer !== null) clearTimeout(timer); timer = null; }
+  function hasDialog() { return !!document.querySelector('dialog[open]'); }
+  function showDialog(id) { cancelAI(); Sound.stop(); $(id).showModal(); }
+  function updateSoundButton() {
+    const available=Sound.supported(),on=Sound.isEnabled();
+    $('soundButton').disabled=!available;
+    $('soundButton').setAttribute('aria-pressed',String(on&&available));
+    $('soundButton').setAttribute('aria-label',!available?'此浏览器不支持音效':on?'关闭音效':'开启音效');
+    $('soundLabel').textContent=!available?'音效不可用':on?'音效开':'已静音';
+  }
+  function notify(message) {
+    clearTimeout(noticeTimer); $('notice').textContent = message; $('notice').classList.remove('hidden');
+    noticeTimer = setTimeout(() => $('notice').classList.add('hidden'), 4300);
+  }
+  function fail(error) {
+    cancelAI(); Sound.stop(); paused = true; halted = true;
+    $('errorBanner').textContent = '对局已暂停：' + error.message + ' 请导出存档检查，或重新开局。';
+    $('errorBanner').classList.remove('hidden'); render();
+  }
+  function scheduleAI() {
+    cancelAI();
+    if (!state || state.phase === 'ended' || state.current === 0 || paused || halted || hasDialog()) return;
+    const expectedState = state, expectedEpoch = epoch;
+    timer = setTimeout(() => {
+      timer = null;
+      if (epoch !== expectedEpoch || state !== expectedState || paused || halted || hasDialog() || state.current === 0 || state.phase === 'ended') return;
+      try {
+        const action = A.choose(R.observe(state, state.current));
+        if (!action) throw new Error('当前 AI 没有合法动作。');
+        perform(state.current, action);
+      } catch (error) { fail(error); }
+    }, 1000);
+  }
+  function captureResolved(before, after, actor, action) {
+    return action.type==='play'?[{id:action.card,kind:'main',owner:actor}]:[];
+  }
+  // Presentation only. No game state is written by animation or completion handlers.
+  function visualFeedback(before, action, origin) {
+    if (action.type === 'yield') return;
+    if (globalThis.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const zone=$('pendingCards');
+    if (typeof zone.animate!=='function') return;
+    zone.animate([{transform:'translateY(-9px) rotate(-2deg)',opacity:.6},{transform:'translateY(3px) rotate(1deg)',opacity:1},{transform:'translateY(0) rotate(0)'}],{duration:390,easing:'cubic-bezier(.2,.85,.2,1)'});
+    const previous=new Set(before.players[0].hand);
+    state.players[0].hand.filter(id=>!previous.has(id)).forEach(id=>{
+      const element=$('hand').querySelector('[data-card="'+id+'"]');
+      if(element&&typeof element.animate==='function')element.animate([{transform:'translate(30px,20px) rotate(7deg)',opacity:.2},{transform:'translate(-3px,-4px) rotate(-2deg)',opacity:1},{transform:'none'}],{duration:440,easing:'cubic-bezier(.2,.85,.2,1)'});
+    });
+    if(state.phase==='ended')$('winnerBanner').animate([{transform:'scale(.96)'},{transform:'scale(1.015)'},{transform:'scale(1)'}],{duration:430});
+    if(action.type==='play'&&origin&&origin.width>0){
+      const target=zone.querySelector('.card-mini');
+      if(!target)return;
+      const end=target.getBoundingClientRect(),ghost=document.createElement('div');
+      ghost.className='card-flight';ghost.setAttribute('aria-hidden','true');ghost.innerHTML=CardArt.face(action.card);
+      Object.assign(ghost.style,{left:origin.left+'px',top:origin.top+'px',width:origin.width+'px',height:origin.height+'px'});
+      document.body.append(ghost);
+      const animation=ghost.animate([{transform:'translate(0,0) rotate(-4deg)',opacity:1},{transform:'translate('+(end.left-origin.left)+'px,'+(end.top-origin.top)+'px) rotate(3deg) scale('+(end.width/origin.width)+')',opacity:.9}],{duration:340,easing:'cubic-bezier(.22,.7,.3,1)',fill:'forwards'});
+      animation.finished.then(()=>ghost.remove(),()=>ghost.remove());
+    }
+  }
+  function perform(actor, action) {
+    if (!state || state.phase === 'ended' || halted || hasDialog()) return;
+    if (actor !== state.current) throw new Error('非当前玩家不能操作。');
+    cancelAI();
+    const before = state;
+    const otherPanel=document.querySelectorAll('.opponent')[actor-1];
+    const source = actor===0 && action.type==='play' ? $('hand').querySelector('[data-card="'+action.card+'"]') : otherPanel && otherPanel.querySelector('.back, .card-mini');
+    const origin = source && source.getBoundingClientRect ? source.getBoundingClientRect() : null;
+    const after = R.apply(before, actor, action);
+    R.validate(after);
+    recent = captureResolved(before, after, actor, action);
+    recentlySkipped=after.log.slice(before.log.length).filter(e=>e.event==='skip').map(e=>e.actor);
+    state = after; selectedCard = null; selectedAction = null; draft = {};
+    render();
+    if(after.phase==='ended'){Sound.stop();Sound.play('win');}
+    else if(action.branch==='nativeSuppress'||recentlySkipped.length)Sound.play('suppress');
+    else if(action.type==='yield')Sound.play('select');
+    else if(action.branch==='repelDraw')Sound.play('draw');
+    else if(action.branch==='nativeRole'||R.CARDS[action.card].kind==='small')Sound.play('role');
+    else if(R.CARDS[action.card].kind==='big')Sound.play('swap');
+    else Sound.play('play');
+    try { visualFeedback(before,action,origin); } catch(error) { /* Decorative feedback never interrupts a valid turn. */ }
+    scheduleAI();
+  }
+  function startGame(count, seed) {
+    cancelAI(); Sound.stop(); fileReadEpoch++;
+    document.querySelectorAll('.card-flight').forEach(el=>el.remove());
+    state = R.newGame({count,seed});
+    paused = false; halted = false; recent = []; recentlySkipped=[]; selectedCard = null; selectedAction = null; draft = {};
+    $('showHands').checked = false; $('errorBanner').classList.add('hidden');
+    if ($('setupDialog').open) $('setupDialog').close();
+    render(); scheduleAI(); Sound.play('start');
+  }
+  function roleMarkup(id) {
+    const c = R.CARDS[id];
+    return '<span class="role-mini '+(red(id)?'red':'')+'" aria-label="角色 '+esc(c.label)+'">'+CardArt.face(id)+'</span>';
+  }
+  function miniMarkup(id) {
+    const c = R.CARDS[id], joker = c.kind === 'big' || c.kind === 'small';
+    return '<div class="card-mini '+(red(id)?'red ':'')+(joker?'joker':'')+'" aria-label="'+esc(c.label)+'">'+CardArt.face(id)+'</div>';
+  }
+  function renderPlayers() {
+    $('opponents').innerHTML = state.players.slice(1).map((p,i) => {
+      const seat = i+1, suit = R.CARDS[p.role].suit;
+      const cards = $('showHands').checked ? p.hand.map(miniMarkup).join('') : p.hand.map(() => '<span class="back" aria-hidden="true">'+CardArt.back()+'</span>').join('');
+      return '<section class="opponent '+(state.current===seat && state.phase!=='ended'?'active':'')+'" aria-label="'+name(seat)+'，'+p.hand.length+'张手牌"><div class="row">'+roleMarkup(p.role)+'<div style="min-width:0"><div class="seat-label">'+name(seat)+' <span class="muted">· '+p.hand.length+' 张</span></div><div class="meta">'+suitText(suit)+' · '+SUITS[suit].meaning+'</div></div></div><div class="backs" aria-label="'+($('showHands').checked?'调试公开手牌':'隐藏手牌')+'">'+cards+'</div>'+(p.skip?'<span class="pill skip-pill">制约 · 下次跳过行动</span>':recentlySkipped.includes(seat)?'<span class="pill skip-pill">受压制 · 已跳过</span>':'')+'</section>';
+    }).join('');
+    $('myRole').innerHTML = roleMarkup(state.players[0].role);
+    const mySuit = R.CARDS[state.players[0].role].suit;
+    $('myRelations').innerHTML='<span>本命 '+SUITS[mySuit].symbol+'</span><span>顺色 '+R.SUITS.filter(s=>s!==mySuit&&R.relation(mySuit,s)==='attract').map(s=>SUITS[s].symbol).join(' ')+'</span><span>逆色 '+R.SUITS.filter(s=>R.relation(mySuit,s)==='repel').map(s=>SUITS[s].symbol).join(' ')+'</span>';
+    $('mySkip').classList.toggle('hidden', !state.players[0].skip&&!recentlySkipped.includes(0));
+    $('mySkip').textContent=state.players[0].skip?'制约 · 下次跳过行动':'受压制 · 已跳过';
+  }
+  function renderPools() {
+    $('poolCount').textContent = state.pool.length + ' 张';
+    $('roleTotal').textContent = state.rolePool.length + ' 张';
+    $('roleCounts').innerHTML = R.SUITS.map(suit=>{const count=state.rolePool.filter(id=>R.CARDS[id].suit===suit).length;return '<span class="'+(count?'':'empty')+'" title="'+suitText(suit)+'可用 '+count+' 张">'+SUITS[suit].symbol+' '+count+'</span>';}).join('');
+    $('rolePool').innerHTML = R.SUITS.map(suit => {
+      const available = state.rolePool.filter(id=>R.CARDS[id].suit===suit).length;
+      return '<div class="role-suit"><div class="role-suit-head"><span>'+suitText(suit)+'</span><span class="muted">'+available+' 张</span></div><div class="role-ranks">'+['J','Q','K'].map(rank=>{
+        const id=suit+rank, inPool=state.rolePool.includes(id), seat=state.players.findIndex(p=>p.role===id);
+        return '<span class="rank '+(red(id)?'red ':'')+(!inPool?'used':'')+'" title="'+esc(R.CARDS[id].label+' · '+(inPool?'角色牌组可用':name(seat)+'在用'))+'">'+CardArt.face(id)+'</span>';
+      }).join('')+'</div></div>';
+    }).join('');
+    const pending=state.pending, history=recent.length?recent:state.lastPlay?[{id:state.lastPlay.card,kind:'main',owner:state.lastPlay.actor}]:[];
+    $('pendingTitle').textContent=pending.length?'待结算':history.length?'最近出牌':'临时结算区';
+    $('pendingCount').textContent=pending.length+' 张';
+    const displayed=pending.length?pending:history;
+    $('pendingCards').innerHTML=displayed.length?displayed.map(p=>'<div class="settled-card">'+miniMarkup(p.id)+'<span class="small">'+name(p.owner)+' · 主牌</span></div>').join(''):'<span class="small muted">等待主牌</span>';
+    $('pendingNote').textContent=pending.length?'必要效果结算中':'已出牌均已回收 · 此处仅作公开记录';
+  }
+  function currentChoices() {
+    if(!state||state.current!==0||state.phase!=='main'||!selectedCard)return [];
+    return R.legalActions(R.observe(state,0)).filter(a=>a.type==='play'&&a.card===selectedCard);
+  }
+  function modeOf(action){return action.branch||R.CARDS[action.card].kind;}
+  function syncSelection(){
+    const choices=currentChoices();selectedAction=null;
+    const modes=[...new Set(choices.map(modeOf))];
+    if(!modes.includes(draft.mode))draft.mode=modes.length===1?modes[0]:null;
+    const base=choices.filter(a=>modeOf(a)===draft.mode);
+    for(const field of ['suit','target']){
+      const values=[...new Set(base.filter(a=>Object.hasOwn(a,field)).map(a=>a[field]))];
+      if(values.length===1)draft[field]=values[0];else if(!values.includes(draft[field]))delete draft[field];
+    }
+    const chosen=base.filter(a=>['suit','target'].every(f=>!Object.hasOwn(a,f)||a[f]===draft[f]));
+    if(chosen.length===1)selectedAction=key(chosen[0]);
+  }
+  function renderHand(){
+    const p=state.players[0],active=state.current===0&&state.phase==='main'&&!halted;
+    const legalIds=new Set(active?R.legalActions(R.observe(state,0)).filter(a=>a.type==='play').map(a=>a.card):[]);
+    $('handCount').textContent='· '+p.hand.length+' 张';
+    $('hand').innerHTML=p.hand.map((id,index)=>{
+      const c=R.CARDS[id],joker=c.kind==='big'||c.kind==='small',enabled=active&&legalIds.has(id);
+      const relation=joker?'技能牌':c.suit===R.CARDS[p.role].suit?'本命':REL[R.relation(R.CARDS[p.role].suit,c.suit)];
+      const label='第'+(index+1)+'张 '+c.label+'，'+relation+(active&&!enabled?'，不能接牌':'');
+      return '<div class="hand-wrap"><button class="hand-card '+(red(id)?'red ':'')+(joker?'joker ':'')+(selectedCard===id?'selected ':'')+(active&&!enabled?'unmatchable':'')+'" data-card="'+id+'" aria-label="'+esc(label)+'" aria-pressed="'+(selectedCard===id)+'" '+(enabled?'':'disabled')+'>'+CardArt.face(id)+'</button><span class="card-position">'+(selectedCard===id?'主牌':String(index+1).padStart(2,'0'))+'</span></div>';
+    }).join('');
+    if(!p.hand.length)$('hand').innerHTML='<p class="muted">手牌已清空</p>';
+    $('handNote').textContent='每次只出一张 · 暗色牌无法接上 · 可按花色或点数理牌';
+    $('handTools').querySelectorAll('button').forEach(b=>b.disabled=!active);
+  }
+  function describeAction(action){
+    const card=R.CARDS[action.card],next=(state.current+1)%state.players.length;
+    if(action.branch==='plain')return '打出一张顺色牌，没有附带弃牌。';
+    if(action.branch==='nativeRole')return '本命牌：让 '+name(next)+' 换为 '+suitText(action.suit)+'。';
+    if(action.branch==='nativeSuppress')return '本命牌：制约异色角色的 '+name(next)+'，跳过其下一次完整行动。';
+    if(action.branch==='repelDraw'){const n=card.value%2?1:2;return '逆色牌：'+(n===1?'奇数':'偶数')+'补 '+n+' 张（当前可补 '+Math.min(n,state.pool.length)+' 张），补完才检查胜利。';}
+    if(card.kind==='small')return '小王：自己换为 '+suitText(action.suit)+'，无额外弃牌或补牌。';
+    if(action.target!==undefined)return '大王先离手，再与 '+name(action.target)+' 交换剩余整手牌；你获得 '+state.players[action.target].hand.length+' 张。';
+    return '打出最后一张大王，不发动交换。';
+  }
+  function fieldChoices(base,field,label,formatter) {
+    const values=[...new Set(base.filter(a=>Object.hasOwn(a,field)).map(a=>a[field]))];
+    if(!values.length||values.length===1&&values[0]===null)return '';
+    return '<div class="choice-section"><span class="choice-label">'+label+'</span><div class="compact-choices">'+values.map(value=>'<button data-field="'+field+'" data-value="'+value+'" class="'+(draft[field]===value?'selected':'')+'" aria-pressed="'+(draft[field]===value)+'">'+esc(formatter(value))+'</button>').join('')+'</div></div>';
+  }
+  function renderActions(){
+    const actor=state.current,ended=state.phase==='ended';
+    $('turnNumber').textContent=String(state.turn).padStart(2,'0');
+    $('actorLabel').textContent=ended?name(state.winner)+'获胜':name(actor)+' · 正常行动';
+    $('tableStatus').textContent=ended?'对局结束':actor===0?'轮到你了':name(actor)+(paused?' · 已暂停':' 正在行动');
+    $('seatOrder').textContent=state.players.map((_,i)=>name(i)).join(' → ')+' → 我';
+    $('actionHint').textContent='主牌离手 → 必要效果 → 检查胜利 → 回收并推进行动。';
+    $('winnerBanner').classList.toggle('hidden',!ended);
+    if(ended){$('winnerBanner').innerHTML='<strong>'+name(state.winner)+'获胜</strong> · 第 '+state.turn+' 次行动完成合法清手。';$('actions').innerHTML='<h3>'+name(state.winner)+'获胜</h3><button class="primary commit" data-action="restart">再开一局</button>';return;}
+    if(halted){$('actions').innerHTML='<h3>状态检查未通过</h3><p>请导出存档检查或重新开局。</p>';return;}
+    const reference='<p class="chain-hint">'+(state.chain.card?'需大于 '+esc(R.CARDS[state.chain.card].label)+' · '+name(state.chain.owner)+' 领牌':'重新领出 · 点数不限')+' · 大小王可直接出</p>';
+    if(actor!==0){$('actions').innerHTML=reference+'<p class="turn-prompt">'+name(actor)+(paused?' 已暂停':' 正在选择…')+' <button class="quiet-action" data-action="pause">'+(paused?'继续':'暂停')+'</button>'+(paused?' <button class="quiet-action" data-action="step">单步</button>':'')+'</p>';return;}
+    const legal=R.legalActions(R.observe(state,0));
+    if(legal.length===1&&legal[0].type==='yield'){$('actions').innerHTML=reference+'<p>没有可接的牌，保留手牌，依次让其他玩家尝试。</p><button class="primary commit" data-action="yield">无法接牌 · 让过</button>';return;}
+    const choices=currentChoices(),chosen=choices.find(a=>key(a)===selectedAction);
+    if(!choices.length){$('actions').innerHTML=reference+'<p class="turn-prompt">选择下方一张可用手牌</p>';return;}
+    const labels={plain:'顺色 · 直接出',nativeRole:'本命 · 下家换角色',nativeSuppress:'本命 · 制约下家',repelDraw:'逆色 · 补 '+(R.CARDS[selectedCard].value%2?1:2)+' 张',small:'小王 · 自己换角色',big:'大王 · 命运互换'};
+    const modes=[...new Set(choices.map(modeOf))],base=choices.filter(a=>modeOf(a)===draft.mode);
+    let controls=reference+'<h3>'+esc(R.CARDS[selectedCard].label)+' <button class="quiet-action" data-action="reselect">重选主牌</button></h3><div class="choices">'+modes.map(mode=>'<button class="choice '+(draft.mode===mode?'selected':'')+'" data-mode="'+mode+'" aria-pressed="'+(draft.mode===mode)+'">'+esc(labels[mode])+'</button>').join('')+'</div>';
+    controls+=fieldChoices(base,'suit',draft.mode==='small'?'自己的新角色花色':'下一位 '+name((actor+1)%state.players.length)+' 的新花色',suitText);
+    controls+=fieldChoices(base,'target','与一名手牌最少的对手交换',seat=>name(seat)+' · '+state.players[seat].hand.length+' 张');
+    controls+='<div class="action-controls"><button class="primary commit" data-action="commit" '+(chosen?'':'disabled')+'>确认出牌</button></div><p class="selection-detail">'+(chosen?esc(describeAction(chosen)):!draft.mode?'请选择本命牌效果。':'请选择所需花色或目标。')+'</p>';
+    $('actions').innerHTML=controls;
+  }
+
+  function renderLogs() {
+    $('logCount').textContent=state.log.length+' 条';
+    $('logs').innerHTML=state.log.slice().reverse().map(item=>'<li><span class="log-turn">'+String(item.turn).padStart(2,'0')+'</span>'+esc(item.text)+'</li>').join('');
+  }
+  function render() {
+    if (!state) return;
+    R.validate(state);
+    document.querySelector('.arena').setAttribute('data-players',String(state.players.length));
+    renderPlayers();renderPools();renderHand();renderActions();renderLogs();
+    $('pauseButton').textContent=paused?'继续 AI':'暂停 AI';
+    $('pauseButton').disabled=state.phase==='ended'||halted;
+    $('stepButton').disabled=state.phase==='ended'||state.current===0||halted;
+    $('exportButton').disabled=false;
+    $('integrity').textContent='✓ 行动牌 42 / 42 · 角色牌 12 / 12';
+    $('seedInfo').textContent='当前：'+state.players.length+' 人 · 种子 '+state.seed+' · AI '+(state.phase==='ended'?'已停止':paused?'已暂停':'自动')+' · 阶段 '+({main:'出牌选择',ended:'已结束'}[state.phase]);
+  }
+  function togglePause() {
+    if (!state||state.phase==='ended'||halted) return;
+    paused=!paused; cancelAI();if(paused)Sound.stop(); render(); scheduleAI();
+  }
+  function stepAI() {
+    if (!state||state.current===0||state.phase==='ended'||halted||hasDialog()) return;
+    paused=true; cancelAI();
+    try { perform(state.current,A.choose(R.observe(state,state.current))); } catch(error) { fail(error); }
+  }
+  function openSetup() {
+    if (state) { chosenCount=state.players.length; $('seedInput').value=state.seed; }
+    updateCountPicker(); $('cancelSetup').disabled=!state; showDialog('setupDialog');
+  }
+  function updateCountPicker() {
+    document.querySelectorAll('[data-count]').forEach(b=>{ const selected=Number(b.dataset.count)===chosenCount;b.classList.toggle('selected',selected);b.setAttribute('aria-pressed',String(selected)); });
+  }
+  function exportJSON() {
+    if (!state) return;
+    R.validate(state);
+    const output={format:'flower-cards-offline',version:6,state};
+    const blob=new Blob([JSON.stringify(output,null,2)],{type:'application/json;charset=utf-8'});
+    const url=URL.createObjectURL(blob), link=document.createElement('a');
+    link.href=url;link.download='花色纸牌-'+state.players.length+'人-第'+state.turn+'回合.json';document.body.append(link);link.click();link.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+    notify('已导出完整对局 JSON，包含隐藏牌与随机状态。');
+  }
+  function importJSON() {
+    try {
+      if ($('importText').value.length>10000000) throw new Error('存档过大，未载入。');
+      const value=JSON.parse($('importText').value);
+      let candidate=value;
+      if (value&&value.format!==undefined) {
+        if(value.format!=='flower-cards-offline'||value.version!==6) throw new Error('此存档与当前试玩规则不兼容，请使用对应旧版原型打开。');
+        candidate=value.state;
+      }
+      R.validate(candidate);
+      const next=JSON.parse(JSON.stringify(candidate));
+      cancelAI();Sound.stop();fileReadEpoch++;document.querySelectorAll('.card-flight').forEach(el=>el.remove());state=next;paused=true;halted=false;recent=[];recentlySkipped=[];selectedCard=null;selectedAction=null;draft={};
+      $('showHands').checked=false;$('errorBanner').classList.add('hidden');$('importError').textContent='';
+      $('importDialog').close();render();notify('存档已载入，AI 已暂停。可单步检查或继续。');
+    } catch(error) { $('importError').textContent='未载入，当前对局保持原样。\n'+error.message; }
+  }
+  function runSelfTests(){
+    showDialog('testDialog');const result=[];let passed=0,failed=0;
+    const assert=(ok)=>{if(!ok)throw Error('结果不符');};
+    const check=(title,fn)=>{try{fn();passed++;result.push('通过 · '+title);}catch(e){failed++;result.push('失败 · '+title+'：'+e.message);}};
+    function fixture(hands,roles){
+      const s=R.newGame({count:hands.length,seed:'builtin-v3'});
+      s.players=hands.map((hand,i)=>({hand:hand.slice(),role:roles[i],skip:false}));
+      s.pool=R.ACTION_IDS.filter(id=>!hands.flat().includes(id));s.rolePool=R.ROLE_IDS.filter(id=>!roles.includes(id));
+      Object.assign(s,{current:0,turn:1,phase:'main',pending:[],winner:null,log:[],chain:{card:null,owner:null},lastPlay:null});R.validate(s);return s;
+    }
+    function play(s,fields){const a=R.legalActions(R.observe(s,s.current)).find(a=>Object.keys(fields).every(k=>a[k]===fields[k]));assert(a);return R.apply(s,s.current,a);}
+    [2,3,4].forEach(count=>check(count+' 人发牌、守恒和种子复现',()=>{const s=R.newGame({count,seed:'builtin'});R.validate(s);assert(s.pool.length===18&&s.players.every(p=>p.hand.length===24/count)&&JSON.stringify(s)===JSON.stringify(R.newGame({count,seed:'builtin'})));}));
+    check('最后大王不交换',()=>{const s=fixture([['jokerBig'],['H1','S2']],['HJ','SJ']),n=play(s,{card:'jokerBig'});assert(n.winner===0&&JSON.stringify(n.players[1].hand)===JSON.stringify(s.players[1].hand));});
+    for(const id of ['S1','S2'])check(id+' 按奇偶补牌且不能抽回主牌',()=>{const n=play(fixture([[id],['H1','D2']],['HJ','SJ']),{card:id,branch:'repelDraw'});assert(n.winner===null&&n.players[0].hand.length===(R.CARDS[id].value%2?1:2)&&!n.players[0].hand.includes(id));});
+    check('顺色只出一张',()=>{const n=play(fixture([['D2','C3'],['H1']],['HJ','SJ']),{card:'D2',branch:'plain'});assert(n.players[0].hand.length===1);});
+    check('本命只提供换角色或合格制约',()=>{const s=fixture([['H2','D3'],['S1']],['HJ','SJ']);const a=R.legalActions(R.observe(s,0)).filter(a=>a.card==='H2');assert(a.some(a=>a.branch==='nativeRole')&&a.some(a=>a.branch==='nativeSuppress')&&a.every(a=>['nativeRole','nativeSuppress'].includes(a.branch)));});
+    check('小王先完成换角色才获胜',()=>{const n=play(fixture([['jokerSmall'],['H1']],['HJ','SJ']),{card:'jokerSmall',suit:'D'});assert(n.winner===0&&R.CARDS[n.players[0].role].suit==='D');});
+    check('手牌理牌不消耗回合',()=>{const s=fixture([['D3','H1'],['S1']],['HJ','SJ']),n=R.reorder(s,0,['H1','D3']);assert(n.players[0].hand[0]==='H1'&&n.turn===s.turn&&n.rng===s.rng&&JSON.stringify(n.pool)===JSON.stringify(s.pool));});
+    check('AI 看不到隐藏牌和随机状态',()=>{const o=R.observe(R.newGame({count:4,seed:'private'}),0);assert(!('pool'in o)&&!('rng'in o)&&!('seed'in o)&&o.players.every(p=>!('hand'in p)));});
+    check('拒绝非当前玩家和终局动作',()=>{const s=fixture([['jokerBig'],['S1']],['HJ','SJ']);let rejected=0;try{R.apply(s,1,{type:'yield'});}catch(e){rejected++;}const n=play(s,{card:'jokerBig'});try{R.apply(n,0,{type:'yield'});}catch(e){rejected++;}assert(rejected===2);});
+    $('testOutput').textContent=passed+' 通过 / '+failed+' 失败\n\n'+result.join('\n');
+  }
+  $('hand').addEventListener('click',event=>{
+    const button=event.target.closest('[data-card]');
+    if(!button||button.disabled||!state||state.current!==0||state.phase!=='main'||halted||hasDialog())return;
+    const id=button.dataset.card;
+    if(!R.legalActions(R.observe(state,0)).some(a=>a.type==='play'&&a.card===id))return;
+    Sound.unlock();Sound.play('select');selectedCard=id;draft={};syncSelection();renderHand();renderActions();
+    const focused=$('hand').querySelector('[data-card="'+id+'"]');if(focused)focused.focus({preventScroll:true});
+  });
+  $('handTools').addEventListener('click',event=>{
+    const b=event.target.closest('button');
+    if(!b||b.disabled||!state||state.current!==0||state.phase!=='main'||halted||hasDialog()||!['sort-suit','sort-value'].includes(b.dataset.action))return;
+    const rank=id=>{const c=R.CARDS[id];return c.kind==='small'?1000:c.kind==='big'?1001:b.dataset.action==='sort-suit'?R.SUITS.indexOf(c.suit)*10+c.value:c.value*4+R.SUITS.indexOf(c.suit);};
+    try{state=R.reorder(state,0,state.players[0].hand.slice().sort((a,b)=>rank(a)-rank(b)));syncSelection();render();Sound.unlock();Sound.play('select');}catch(e){fail(e);}
+  });
+
+  $('hand').addEventListener('pointermove',event=>{const b=event.target.closest('.hand-card');if(b&&!b.disabled){const rect=b.getBoundingClientRect();b.style.setProperty('--hover-turn',((event.clientX-rect.left)/Math.max(1,rect.width)*6-3).toFixed(2)+'deg');}});
+  $('actions').addEventListener('click',event=>{
+    const button=event.target.closest('button');if(!button||button.disabled)return;
+    Sound.unlock();
+    const action=button.dataset.action;
+    if(action==='pause')return togglePause();if(action==='step')return stepAI();if(action==='restart')return openSetup();
+    if(!state||state.current!==0||halted||hasDialog()||state.phase==='ended')return;
+    if(button.dataset.mode!==undefined&&state.phase==='main'){
+      if(currentChoices().some(a=>modeOf(a)===button.dataset.mode)){draft={mode:button.dataset.mode};syncSelection();Sound.play('select');renderHand();renderActions();}return;
+    }
+    if(button.dataset.field!==undefined&&state.phase==='main'){
+      const field=button.dataset.field;
+      if(!['suit','target'].includes(field))return;
+      const value=field==='suit'?button.dataset.value:Number(button.dataset.value);
+      if(currentChoices().some(a=>modeOf(a)===draft.mode&&a[field]===value)){draft[field]=value;syncSelection();Sound.play('select');renderHand();renderActions();}return;
+    }
+    try{
+      if(action==='reselect'){selectedCard=null;selectedAction=null;draft={};renderHand();renderActions();}
+      if(action==='yield'&&R.legalActions(R.observe(state,0)).some(a=>a.type==='yield'))perform(0,{type:'yield'});
+      if(action==='commit'){const chosen=currentChoices().find(a=>key(a)===selectedAction);if(chosen)perform(0,chosen);}
+    }catch(error){fail(error);}
+  });
+
+  $('playerPicker').addEventListener('click',event=>{const b=event.target.closest('[data-count]');if(b){chosenCount=Number(b.dataset.count);updateCountPicker();}});
+  $('startButton').addEventListener('click',()=>{Sound.unlock();try{startGame(chosenCount,$('seedInput').value||'flower-2026');}catch(error){notify(error.message);}});
+  $('randomSeed').addEventListener('click',()=>{const values=new Uint32Array(2);if(globalThis.crypto&&crypto.getRandomValues){crypto.getRandomValues(values);$('seedInput').value=Array.from(values,v=>v.toString(36)).join('-');}else $('seedInput').value=Date.now().toString(36);});
+  $('restartButton').addEventListener('click',openSetup);
+  $('cancelSetup').addEventListener('click',()=>{if(state)$('setupDialog').close();});
+  $('setupDialog').addEventListener('cancel',event=>{if(!state)event.preventDefault();});
+  $('rulesButton').addEventListener('click',()=>showDialog('rulesDialog'));
+  $('logsButton').addEventListener('click',()=>showDialog('logsDialog'));
+  $('soundButton').addEventListener('click',()=>{Sound.setEnabled(!Sound.isEnabled());updateSoundButton();if(Sound.isEnabled()){Sound.unlock();Sound.play('select');}});
+  const updateScreenButton=()=>{
+    $('fullscreenButton').textContent=Screen.isFullscreen()?'退出全屏':Screen.supported()?'全屏':'手机';
+    $('fullscreenButton').setAttribute('aria-pressed',String(Screen.isFullscreen()));
+  };
+  Screen.onChange(updateScreenButton);
+  $('fullscreenButton').addEventListener('click',async()=>{
+    const result=await Screen.toggle();updateScreenButton();
+    const messages={unsupported:'请将手机横过来。iPhone 可在 Safari 的分享菜单中选择“添加到主屏幕”，以网页 App 打开。',denied:'浏览器未允许全屏。仍可横屏游玩；iPhone 可在 Safari 中添加到主屏幕。','rotate-manually':'已尝试全屏，请手动横转手机。若方向不变，请关闭竖排方向锁定。'};
+    $('screenHint').textContent=messages[result.reason]||'';
+    $('screenHint').classList.toggle('hidden',!messages[result.reason]);
+  });
+  updateScreenButton();
+  $('pauseButton').addEventListener('click',()=>{Sound.unlock();togglePause();});$('stepButton').addEventListener('click',()=>{Sound.unlock();stepAI();});
+  $('showHands').addEventListener('change',()=>{if(state)renderPlayers();});
+  $('exportButton').addEventListener('click',exportJSON);
+  $('importButton').addEventListener('click',()=>{fileReadEpoch++;$('importError').textContent='';showDialog('importDialog');});
+  $('confirmImport').addEventListener('click',importJSON);
+  $('importText').addEventListener('input',()=>{fileReadEpoch++;$('importError').textContent='';});
+  $('importDialog').addEventListener('close',()=>{fileReadEpoch++;});
+  $('importFile').addEventListener('change',async()=>{
+    const token=++fileReadEpoch,file=$('importFile').files[0];if(!file)return;
+    if(file.size>10000000){$('importError').textContent='存档过大，未读取。';return;}
+    try{const text=await file.text();if(token===fileReadEpoch){$('importText').value=text;$('importError').textContent='';}}catch(error){if(token===fileReadEpoch)$('importError').textContent='无法读取文件：'+error.message;}
+  });
+  $('selfTestButton').addEventListener('click',runSelfTests);
+  document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>$(b.dataset.close).close()));
+  document.querySelectorAll('dialog').forEach(d=>d.addEventListener('close',scheduleAI));
+  $('fullRules').textContent="# 花色纸牌 V3.0｜单张接龙规则\n\nV3 保留 V2 卡牌美术，采用下列已确认规则。旧版保存在 archive/v2.0/ 与 archive/v1.3/。\n\n## 1. 开局与目标\n\n2—4 人，顺时针行动，随机先手。行动牌为四花色 A—10 加大小王，共 42 张；角色牌为四花色 J/Q/K，共 12 张，每人公开一张，只看花色。先手起轮流发出 24 张行动牌，2/3/4 人各 12/8/6 张，其余 18 张为公共“弃牌/备牌堆”。\n\n每次行动最多打出一张主牌。完成全部必要效果后，首先清空手牌者获胜，立即结束整局。没有自动摸牌、附带弃牌、奖励弃牌、同点数响应或正式回合上限。\n\n## 2. 单张接龙\n\n- 普通牌必须严格大于本轮上一张普通主牌。A=1，之后为 2—10；不能出相同点数。所有普通牌均遵守这个限制。\n- 首次领出或重新领出时点数不限。大小王没有点数，可无视大小直接单出并发动技能。\n- 没有任何合法牌可出时，保留手牌让过；其他玩家继续依次尝试。有人接出更大的普通牌，就更新比较牌及其出牌者。\n- 其余玩家全部未接出更大的普通牌，顺位回到最后最大普通牌出牌者时，由其重新领出，清空大小限制。制约造成的跳过也计为该位未接牌。\n- 有合法牌时必须出，不能主动让过；持有可出的大小王也不能让过。\n- 大小王不更新比较点数，也不取代最大普通牌的出牌者。出王之后，下家仍须大于本轮最近的普通主牌；其余人都未接出更大的普通牌，仍由该最大牌出牌者重新领出。本轮尚无普通主牌时，出王后仍不限点数。\n\n## 3. 普通主牌效果\n\n先看出牌者自己的角色花色。红色为 ♥/♦，黑色为 ♠/♣。\n\n| 类型 | 判断 | 出牌后的必要效果 |\n| --- | --- | --- |\n| 顺色异花 | 与角色同颜色、不同花色 | 只出这一张，无附带弃牌 |\n| 本命 | 与角色完全同花色 | 下家换角色；或符合条件时制约下家，二选一 |\n| 逆色 | 与角色颜色相反 | 奇数补 1 张，偶数补 2 张，A 按奇数 |\n\n本命牌的选择：\n\n1. **换下家角色：**仅影响顺时针下一位。选一种与其当前角色不同、且角色牌组中可用的花色；取该花色第一张，旧角色退回牌组末尾。不能改为交换手牌。\n2. **制约下家：**仅当出牌瞬间，下家角色与本命主牌颜色相反时可选。下家跳过下一次完整行动，随后恢复；不同时换角色，不产生同点数响应。标记属于玩家，不能随换手牌转移，不叠加。\n\n逆色不能主动放弃。补牌从当前公共回收堆等概率随机抽取；不足时取完现有牌便停止，空堆补零张。主牌先放入待结算区，不能被本次补牌抽回。补完才检查胜利。\n\n## 4. 大小王\n\n- **大王：**先离手，再与其他玩家中手牌最少的一人交换双方剩余整手牌；并列时由出牌者选。大王自身不交换，角色、座位、行动权和制约标记不交换。出牌前只有大王一张时，不交换，正常清手获胜。\n- **小王：**先离手，再为自己更换可用的不同角色花色，替换方法与本命换角色相同。不附加弃牌或补牌；最后一张也必须完成角色替换后才获胜。\n\n## 5. 结算与桌面\n\n选择合法主牌及完整效果目标 → 主牌离手进入待结算区 → 完成补牌、角色替换或整手交换 → 检查胜利 → 主牌回公共回收堆 → 若未获胜则顺时针推进，消费制约跳过并检查是否重新领出。\n\n提交后不能因看到随机结果而撤销。新牌追加手牌右侧，但手牌不再固定顺序，允许理牌。理牌不消耗行动、不触发效果；整手交换本身保留双方当前排列。\n\n手牌、回收堆、待结算区合计始终为 42 张唯一行动牌；角色牌组与在用角色合计始终为 12 张，不能混合。最近出牌与接龙参考仅为公开记录，不是另一个实体牌堆。\n\n公开信息：角色、手牌数量、角色牌组各花色可用数量、回收堆数量、接龙参考、制约标记与行动日志。对手手牌和回收堆具体内容隐藏。AI 只接收自己的手牌和公开信息，调试显示所有手牌不扩大 AI 权限。\n\n## 6. 相对旧版的改动\n\n1. 增加严格单张比大与所有对手无法接牌后重新领出的流程。\n2. 取消顺色附带弃牌，单次仅一张主牌。\n3. 完全同花色成为本命牌：只提供换下家角色或条件制约；其他顺色牌直接出。\n4. 制约限于本命牌、固定异色下家、跳过一次完整行动。取消 V2 指定任意玩家及同点数响应。\n5. 逆色改为奇数补一、偶数补二，取消主动放弃。\n6. 手牌允许理牌。移除旧额外弃牌奖励。\n7. 存档版本为 6，不把旧规则 JSON 自动转换；旧存档用对应旧网页打开。\n\n保留：牌组和发牌、随机先手、角色替换方式、大小王技能、结算前排除待结算牌、必要效果后判胜。本版没有加入平局或正式回合上限。自动测试若达到测试步数上限，必须报告超时，不能视为胜负规则。\n";
+  document.querySelector('.pool-graphic').innerHTML=CardArt.back();
+  $('roleDeck').innerHTML=CardArt.back();
+  updateSoundButton();
+  $('actions').innerHTML='<p class="turn-prompt">选择人数，开始对局</p>';
+  $('pauseButton').disabled=true;$('stepButton').disabled=true;$('exportButton').disabled=true;
+  openSetup();
+})();
+
+</script>
+</body>
+</html>
