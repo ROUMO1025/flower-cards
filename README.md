@@ -29,3 +29,11 @@ AI 在浏览器内按合法动作和启发式评分决策，只读取自己的�
 ## 验证范围
 
 规则与 AI 沿用 V3 已验证版本。手机版通过界面与屏幕 API 仿真检查；iPhone 真机触控、浏览器音效和布局仍需试玩验证。
+
+## 中英切换 / Language
+
+开局窗口和牌桌右上角点击 EN / 中文，立即切换并记住选择，不重新开局。
+Use EN / 中文 in setup or the top toolbar. Language changes preserve the game and are remembered locally.
+
+Play: https://roumo1025.github.io/flower-cards/
+

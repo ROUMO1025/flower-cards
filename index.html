@@ -135,7 +135,7 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 </style>
 </head>
 <body>
-<header class="game-toolbar"><div class="row"><span class="brand-mark" aria-hidden="true">♠♦</span><h1>花色纸牌</h1></div><nav class="table-tools" aria-label="对局工具"><button class="soft" id="fullscreenButton" aria-label="全屏与手机游玩说明" aria-pressed="false">全屏</button><button class="soft" id="soundButton" aria-label="关闭音效" aria-pressed="true"><span aria-hidden="true">♪</span> <span id="soundLabel">音效开</span></button><button class="soft" id="logsButton">日志</button><button class="soft" id="restartButton">重开</button><button class="help-button" id="rulesButton" aria-label="查看游戏规则" title="游戏规则">?</button></nav></header>
+<header class="game-toolbar"><div class="row"><span class="brand-mark" aria-hidden="true">♠♦</span><h1>花色纸牌</h1></div><nav class="table-tools" aria-label="对局工具"><button class="soft" data-language aria-label="Switch to English">EN</button><button class="soft" id="fullscreenButton" aria-label="全屏与手机游玩说明" aria-pressed="false">全屏</button><button class="soft" id="soundButton" aria-label="关闭音效" aria-pressed="true"><span aria-hidden="true">♪</span> <span id="soundLabel">音效开</span></button><button class="soft" id="logsButton">日志</button><button class="soft" id="restartButton">重开</button><button class="help-button" id="rulesButton" aria-label="查看游戏规则" title="游戏规则">?</button></nav></header>
 <aside id="rotateHint" class="rotate-hint" role="status"><span aria-hidden="true">↻</span> 将手机横过来，牌桌更宽。若方向不变，请关闭手机的竖排方向锁定。</aside>
 <p id="screenHint" class="screen-hint hidden" role="status"></p>
 <div id="errorBanner" class="error-banner hidden" role="alert"></div>
@@ -152,7 +152,7 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 </main>
 <details class="debug" id="debugPanel"><summary>调试与存档</summary><div class="debug-content"><button id="pauseButton">暂停 AI</button><button id="stepButton">AI 单步</button><label class="check-label"><input id="showHands" type="checkbox">显示所有手牌</label><button id="exportButton">导出 JSON</button><button id="importButton">导入 JSON</button><button id="selfTestButton">运行内置检查</button><span class="check-state" id="integrity">等待开局</span></div><p class="debug-detail" id="seedInfo"></p><p class="debug-detail">单步推进一次出牌或无法接牌时的让过。导出包含完整隐藏牌与随机状态，用于复现；导入通过校验后暂停 AI。调试显示不改变 AI 可读取的信息。</p></details>
 <dialog id="logsDialog" class="logs-dialog" aria-labelledby="logsTitle"><div class="dialog-head row between"><h2 id="logsTitle">公开行动日志 <span id="logCount" class="small muted">0 条</span></h2><button data-close="logsDialog">返回对局</button></div><ol class="logs" id="logs"></ol></dialog>
-<dialog id="setupDialog" aria-labelledby="setupTitle"><div class="dialog-head"><div class="eyebrow" style="margin-bottom:10px">LOCAL TABLE / V3.0</div><h2 id="setupTitle">开一桌花色纸牌</h2></div><div class="dialog-body"><p>单张比大，A 最小、10 最大。本命选择换下家角色或制约，逆色按奇偶补牌。率先合法清空手牌即获胜。</p><div class="field">选择人数</div><div class="player-picker" id="playerPicker"><button class="player-option" data-count="2" aria-pressed="false"><strong>2 人</strong><span>我 + 1 名 AI · 各 12 张</span></button><button class="player-option selected" data-count="3" aria-pressed="true"><strong>3 人</strong><span>我 + 2 名 AI · 各 8 张</span></button><button class="player-option" data-count="4" aria-pressed="false"><strong>4 人</strong><span>我 + 3 名 AI · 各 6 张</span></button></div><div class="seed-row"><label class="field">固定随机种子<input id="seedInput" value="flower-2026" maxlength="120" spellcheck="false" autocomplete="off"></label><button id="randomSeed">换一个</button></div><p class="small muted" style="margin-top:11px">人数、种子和操作相同，即可复现相同对局。先手随机。</p></div><div class="dialog-footer"><button id="cancelSetup" class="soft">返回牌桌</button><button id="startButton" class="primary">开始对局</button></div></dialog>
+<dialog id="setupDialog" aria-labelledby="setupTitle"><div class="dialog-head"><div class="eyebrow" style="margin-bottom:10px">LOCAL TABLE / V3.0</div><div class="row between"><h2 id="setupTitle">开一桌花色纸牌</h2><button data-language aria-label="Switch to English">EN</button></div></div><div class="dialog-body"><p>单张比大，A 最小、10 最大。本命选择换下家角色或制约，逆色按奇偶补牌。率先合法清空手牌即获胜。</p><div class="field">选择人数</div><div class="player-picker" id="playerPicker"><button class="player-option" data-count="2" aria-pressed="false"><strong>2 人</strong><span>我 + 1 名 AI · 各 12 张</span></button><button class="player-option selected" data-count="3" aria-pressed="true"><strong>3 人</strong><span>我 + 2 名 AI · 各 8 张</span></button><button class="player-option" data-count="4" aria-pressed="false"><strong>4 人</strong><span>我 + 3 名 AI · 各 6 张</span></button></div><div class="seed-row"><label class="field">固定随机种子<input id="seedInput" value="flower-2026" maxlength="120" spellcheck="false" autocomplete="off"></label><button id="randomSeed">换一个</button></div><p class="small muted" style="margin-top:11px">人数、种子和操作相同，即可复现相同对局。先手随机。</p></div><div class="dialog-footer"><button id="cancelSetup" class="soft">返回牌桌</button><button id="startButton" class="primary">开始对局</button></div></dialog>
 <dialog id="rulesDialog" class="rules-dialog" aria-labelledby="rulesTitle"><div class="dialog-head row between"><h2 id="rulesTitle">游戏规则 · V3.0</h2><button id="returnFromRules" data-close="rulesDialog" class="primary">返回对局</button></div><div class="dialog-body rules-body">
 <h3>一人一次，只出一张</h3><p>普通牌要大于本轮最近一张普通主牌：A=1，10 最大。大小王不比大小，直接出并发动原有技能，不改变最近普通牌的比较点数和出牌者。接不上只能让过；其他人依次尝试，全部接不了才由最大普通牌出牌者重新领出。本轮尚未出普通牌时不限点数。</p>
 <h3>看自己的角色花色</h3><ul><li><strong>顺色异花：</strong>只出牌。</li><li><strong>本命（完全同花色）：</strong>更换下家角色花色；或当下家角色为异色时，让其跳过下一次完整行动。二选一。</li><li><strong>逆色：</strong>奇数补 1 张，偶数补 2 张，不能主动放弃。牌池不足取完现有牌，主牌不能被本次抽回。</li></ul>
@@ -1165,5 +1165,106 @@ root.CardRules=Object.freeze({SUITS,CARDS,ACTION_IDS,ROLE_IDS,relation,newGame,v
 })();
 
 </script>
-</body>
+<script id="card-language">/* Presentation-only localization. Never reads or mutates the game state. */
+(function () {
+  'use strict';
+  const pairs = [
+    ['花色纸牌 · 离线试玩 V3.0','Flower Cards · Offline V3.0'],['花色纸牌','Flower Cards'],
+    ['全屏与手机游玩说明','Fullscreen and mobile help'],['查看游戏规则','View rules'],['游戏规则 · V3.0','Game rules · V3.0'],['游戏规则','Rules'],
+    ['退出全屏','Exit full'],['全屏','Full'],['手机','Mobile'],['此浏览器不支持音效','Audio unavailable in this browser'],['音效不可用','No audio'],['关闭音效','Mute sound'],['开启音效','Enable sound'],['音效开','Sound on'],['已静音','Muted'],
+    ['日志','Log'],['重开','New'],['对局工具','Game tools'],['牌桌','Table'],['准备开局','Ready to start'],['顺时针行动','Clockwise'],['弃牌/备牌堆','Shared pool'],['临时结算区','Pending'],['最近出牌','Last play'],['等待出牌','Waiting for a card'],['等待主牌','Waiting for main card'],['待结算牌不参与本次补牌。','Pending cards cannot be drawn by this effect.'],['当前行动','Current action'],['先完成主牌效果，再检查胜利。','Resolve all effects before checking victory.'],['角色牌组可用花色','Available role suits'],['角色牌组','Role deck'],['查看角色牌','View roles'],['明亮可用 · 淡色在用','Bright: available · Dim: in use'],['我的手牌','Your hand'],['按花色理牌','Sort suit'],['按点数理牌','Sort rank'],['每次只出一张 · 点击可用手牌','One card per action · Select a legal card'],['每次只出一张 · 暗色牌无法接上 · 可按花色或点数理牌','One card per action · Dim cards cannot beat the rank · Sorting allowed'],
+    ['调试与存档','Debug / saves'],['暂停 AI','Pause AI'],['继续 AI','Resume AI'],['AI 单步','AI step'],['显示所有手牌','Reveal all hands'],['导出 JSON','Export JSON'],['导入 JSON','Import JSON'],['运行内置检查','Run checks'],['等待开局','Waiting for game'],['公开行动日志','Public action log'],['返回对局','Back to game'],['返回牌桌','Back to table'],['开一桌花色纸牌','Start a game'],['选择人数','Players'],['固定随机种子','Random seed'],['换一个','Randomize'],['开始对局','Start game'],['人数、种子和操作相同，即可复现相同对局。先手随机。','Same players, seed and actions reproduce the game. First player is random.'],
+    ['单张比大，A 最小、10 最大。本命选择换下家角色或制约，逆色按奇偶补牌。率先合法清空手牌即获胜。','Play one higher card: A is lowest, 10 highest. Native cards change or suppress the next role; opposite colors draw by parity. First legal empty hand wins.'],
+    ['将手机横过来，牌桌更宽。若方向不变，请关闭手机的竖排方向锁定。','Rotate your phone for a wider table. Disable portrait orientation lock if needed.'],
+    ['单步推进一次出牌或无法接牌时的让过。导出包含完整隐藏牌与随机状态，用于复现；导入通过校验后暂停 AI。调试显示不改变 AI 可读取的信息。','Step performs one play or forced pass. Exports include hidden cards and RNG state for reproduction. Import validates the save and pauses AI. Reveal mode never expands AI knowledge.'],
+    ['一人一次，只出一张','One card per action'],['普通牌要大于本轮最近一张普通主牌：A=1，10 最大。大小王不比大小，直接出并发动原有技能，不改变最近普通牌的比较点数和出牌者。接不上只能让过；其他人依次尝试，全部接不了才由最大普通牌出牌者重新领出。本轮尚未出普通牌时不限点数。','Ordinary cards must beat the latest ordinary rank: A=1, 10 highest. Jokers ignore rank and use their skills, preserving the reference rank and its owner. Pass only with no legal card. Everyone else tries before the highest ordinary card’s owner leads again. Without an ordinary reference, any rank is allowed.'],
+    ['看自己的角色花色','Compare with your role'],['顺色异花：','Same color, different suit: '],['只出牌。','Play one card, no extra effect.'],['本命（完全同花色）：','Native (exact same suit): '],['更换下家角色花色；或当下家角色为异色时，让其跳过下一次完整行动。二选一。','Change the next player’s role, OR if their role has the opposite color, suppress their next entire action.'],['逆色：','Opposite color: '],['奇数补 1 张，偶数补 2 张，不能主动放弃。牌池不足取完现有牌，主牌不能被本次抽回。','Odd rank: draw 1. Even rank: draw 2. No voluntary pass. Take what remains if the pool is short; never draw back this main card.'],
+    ['大小王','Jokers'],['大王先离手，再与其他玩家中手牌最少的一人交换剩余整手牌；并列由出牌者选。最后一张大王不交换。小王为自己更换可用的不同角色花色。角色更换取牌组中该花色第一张，旧角色退回末尾。','Remove the Big Joker, then exchange remaining hands with a smallest-hand opponent; choose among ties. A lone Big Joker does not exchange. The Small Joker changes your own role to an available different suit. Take the first role of that suit; return the old role to the deck’s end.'],['结算与获胜','Resolution and victory'],['主牌离手，完成补牌、换角色或换手牌等必要效果后才检查胜利，再回收主牌并推进行动。手牌可理牌；无附带弃牌、同点数响应或额外弃牌奖励。没有正式回合上限。','Remove the main card and resolve all required draws, role changes or swaps before checking victory. Then recycle it and advance. Sorting is allowed. No attached discard, matching-rank response, bonus discard, or official turn limit.'],['展开完整规则书','Full rulebook'],
+    ['导入对局 JSON','Import game JSON'],['关闭','Close'],['选择此前导出的存档，或直接粘贴 JSON。完整通过状态检查后才替换当前对局。','Choose an exported save or paste JSON. Only a fully validated save replaces this game.'],['选择 JSON 文件','Choose JSON file'],['对局 JSON','Game JSON'],['在这里粘贴 JSON…','Paste JSON here…'],['校验并载入','Validate and load'],['内置规则检查','Built-in checks'],['在独立状态中检查，不改变当前对局。完整开发测试结果见交付报告。','Checks use isolated states and leave your game unchanged. See the delivery report for full developer tests.'],
+    ['调试公开手牌','Revealed hand (debug)'],['隐藏手牌','Hidden hand'],['制约 · 下次跳过行动','Suppressed · Skip next action'],['受压制 · 已跳过','Suppression consumed'],['必要效果结算中','Resolving mandatory effects'],['已出牌均已回收 · 此处仅作公开记录','Cards recycled · Public record only'],['手牌已清空','Hand empty'],['打出一张顺色牌，没有附带弃牌。','Play one same-color card. No attached discard.'],['打出最后一张大王，不发动交换。','Play your last Big Joker without exchanging hands.'],['主牌离手 → 必要效果 → 检查胜利 → 回收并推进行动。','Remove main → Resolve effects → Check victory → Recycle and advance.'],['对局结束','Game over'],['轮到你了','Your turn'],['正常行动','Normal action'],['再开一局','New game'],['状态检查未通过','State validation failed'],['请导出存档检查或重新开局。','Export the save for inspection or start a new game.'],['重新领出 · 点数不限','New lead · Any rank'],['大小王可直接出','Jokers ignore rank'],['没有可接的牌，保留手牌，依次让其他玩家尝试。','No legal card. Keep your hand; the others try in order.'],['无法接牌 · 让过','Cannot beat · Pass'],['选择下方一张可用手牌','Select a legal card from your hand'],['顺色 · 直接出','Same color · Play'],['本命 · 下家换角色','Native · Change next role'],['本命 · 制约下家','Native · Suppress next'],['小王 · 自己换角色','Small Joker · Change own role'],['大王 · 命运互换','Big Joker · Swap hands'],['重选主牌','Reselect'],['自己的新角色花色','Your new role suit'],['与一名手牌最少的对手交换','Choose a smallest-hand opponent'],['确认出牌','Play card'],['请选择本命牌效果。','Choose a native-card effect.'],['请选择所需花色或目标。','Choose the required suit or target.'],['选择人数，开始对局','Choose players to start'],
+    ['已导出完整对局 JSON，包含隐藏牌与随机状态。','Game JSON exported, including hidden cards and RNG state.'],['存档已载入，AI 已暂停。可单步检查或继续。','Save loaded. AI paused: step or resume.'],['存档过大，未载入。','Save too large; not loaded.'],['存档过大，未读取。','Save too large; not read.'],['此存档与当前试玩规则不兼容，请使用对应旧版原型打开。','Incompatible save. Open it in the matching older prototype.'],['未载入，当前对局保持原样。','Not loaded. Current game unchanged.'],['无法读取文件：','Cannot read file: '],
+    ['请将手机横过来。iPhone 可在 Safari 的分享菜单中选择“添加到主屏幕”，以网页 App 打开。','Rotate your phone. On iPhone, use Safari Share → Add to Home Screen to open as a web app.'],['浏览器未允许全屏。仍可横屏游玩；iPhone 可在 Safari 中添加到主屏幕。','Fullscreen was not allowed. Landscape still works; on iPhone, add to Home Screen in Safari.'],['已尝试全屏，请手动横转手机。若方向不变，请关闭竖排方向锁定。','Fullscreen requested. Rotate manually; disable portrait lock if needed.'],
+    ['大王是出牌前唯一手牌：正常弃出，不交换。','The Big Joker was the only card: play it without swapping.'],['此前没有普通牌，王不设置大小限制；下一位可以自由领出普通牌。','No ordinary reference yet. The Joker sets no rank; the next player may lead any ordinary card.'],
+    ['红心','Hearts'],['黑桃','Spades'],['方块','Diamonds'],['梅花','Clubs'],['爱情','Love'],['智慧','Wisdom'],['财富','Wealth'],['荣誉','Honor'],['小王','Small Joker'],['大王','Big Joker'],['主牌','Main'],['本命','Native'],['顺色','Same color'],['逆色','Opposite color'],['技能牌','Skill card'],['不能接牌','Cannot beat'],['暂停','Pause'],['继续','Resume'],['单步','Step'],['已暂停','Paused'],['已停止','Stopped'],['已结束','Ended'],['自动','Auto'],['出牌选择','Choose card'],['行动牌','Action cards'],['角色牌','Role cards'],['当前：','Current: '],['种子','Seed'],['阶段','Phase'],['待结算','Pending'],['正在行动','is acting'],['正在选择…','is choosing…'],['获胜',' wins'],['领牌','leads'],['需大于','Beat'],['可用','available'],['在用','in use'],['角色','Role'],['主牌','Main'],['通过','passed'],['失败','failed']
+  ];
+  const exact = new Map(pairs);
+  const fragments = pairs.slice().sort((a,b)=>b[0].length-a[0].length);
+  const rules = [
+    [/^(\d+)人局开始：轮流发出24张行动牌，弃牌\/备牌堆18张；(.+)首次领出。$/, '$1 players: 24 cards dealt; pool 18. $2 leads first.'],
+    [/^(.+)的公开角色为(.+)，手牌(\d+)张。$/, '$1: public role $2, $3 cards.'],
+    [/^(.+)更换角色：(.+) → (.+)。$/, '$1 changes role: $2 → $3.'],
+    [/^逆色主牌：(奇数补1|偶数补2)，实际随机补(\d+)张，追加手牌右侧。(.*)$/, (_,p,n,tail)=>`Opposite-color card (${p==='奇数补1'?'odd: draw 1':'even: draw 2'}): drew ${n} at random, appended right.${tail?' Pool exhausted; drawing stopped.':''}`],
+    [/^(.+)完成主牌必要结算后手牌归零，获胜！本局立即结束。$/, '$1 has emptied their hand after mandatory effects and wins! Game over.'],
+    [/^(.+)受本命牌制约，跳过一次行动；标记解除。$/, '$1 skips one action due to native suppression; marker cleared.'],
+    [/^其余玩家未接出更大的普通牌；(.+)重新领出，大小限制清空。$/, 'No opponent beat the ordinary rank. $1 leads again with no rank restriction.'],
+    [/^王不改变普通牌接龙参考：仍须大于(.+)；依次无人接出时，由(.+)重新领出。$/, 'Joker preserves the reference: beat $1. If everyone else fails, $2 leads again.'],
+    [/^(.+)没有可以接出的牌。$/, '$1 has no legal card and passes.'],[/^(.+)打出主牌(.+)。$/, '$1 plays $2.'],
+    [/^(.+)与(.+)交换剩余手牌，获得(\d+)张、交出(\d+)张；大王不参与交换，角色与制约标记不交换。$/, '$1 swaps remaining hands with $2: receives $3, gives $4. Big Joker, roles and suppression markers stay out of the swap.'],
+    [/^本命制约：(.+)出牌瞬间的角色(.+)与主牌逆色，下次行动跳过一次；不同时换角色。$/, 'Native suppression: $1 has opposite-color role $2 at play time. Skip their next action; no role change.'],
+    [/^本命牌：让 (.+) 换为 (.+)。$/, 'Native card: change $1 to $2.'],
+    [/^本命牌：制约异色角色的 (.+)，跳过其下一次完整行动。$/, 'Native card: suppress opposite-color $1 for their next entire action.'],
+    [/^逆色牌：(奇数|偶数)补 (\d+) 张（当前可补 (\d+) 张），补完才检查胜利。$/,(_,p,n,a)=>`Opposite color: ${p==='奇数'?'odd':'even'} draws ${n} (${a} available). Check victory after drawing.`],
+    [/^小王：自己换为 (.+)，无额外弃牌或补牌。$/, 'Small Joker: change your role to $1. No extra discard or draw.'],
+    [/^大王先离手，再与 (.+) 交换剩余整手牌；你获得 (\d+) 张。$/, 'Remove Big Joker, then swap remaining hands with $1; receive $2 cards.'],
+    [/^下一位 (.+) 的新花色$/, 'New suit for next player: $1'],
+    [/逆色 · 补 (\d+) 张/g,'Opposite · Draw $1'],[/我 \+ (\d+) 名 AI · 各 (\d+) 张/g,'You + $1 AI · $2 cards each'],
+    [/第(\d+)张 /g,'Card $1: '],[/第 (\d+) 次行动完成合法清手。/g,'Emptied hand legally on action $1.'],[/第/g,'Turn'],[/回合/g,'turn'],[/(\d+)\s*人/g,'$1 players'],[/(\d+)\s*张手牌/g,'$1 cards'],[/(\d+)\s*张/g,'$1 cards'],[/(\d+) 条/g,'$1 entries']
+  ];
+  function english(text) {
+    const trim=text.trim();
+    if(exact.has(trim)) return text.replace(trim,exact.get(trim));
+    let out=text;
+    for(const [pattern,replacement] of rules) out=out.replace(pattern,replacement);
+    for(const [zh,en] of fragments) out=out.split(zh).join(en);
+    return out.replace(/[我你]/g,'You').replace(/，/g,', ').replace(/。/g,'.');
+  }
+  const fullEnglish="# Flower Cards V3.0 — Single-card climbing\n\n## Setup and objective\n2–4 players act clockwise, with a random starting player. The 42 action cards are A–10 in four suits plus the Big and Small Jokers. The 12 role cards are J/Q/K in four suits; each player has one public role and only its suit matters. Deal 24 action cards one at a time, starting with the first player: 12/8/6 per player in a 2/3/4-player game. The other 18 form the shared discard/reserve pool.\n\nPlay at most one main card per action. The first player with no cards AFTER all mandatory effects wins immediately. There is no automatic draw, attached discard, bonus discard, matching-rank response, draw result, or official turn limit.\n\n## Climbing\nEvery ordinary card must strictly exceed the most recent ordinary main card in the current sequence. A=1; 10 is highest. Equal ranks cannot be played. Opening or reopening a sequence has no rank restriction.\n\nJokers may always be played alone for their skills. They do not change the ordinary reference rank or its owner. After a Joker, the next ordinary card must still beat that reference. With no ordinary reference yet, any ordinary rank is allowed.\n\nIf no legal card (including a Joker) is available, keep your hand and pass. Other players still try in order. If everyone else fails to play a higher ordinary card, the last highest ordinary card's owner leads again and the rank restriction clears. A suppressed turn counts as failing to beat the reference. Passing voluntarily when a legal card exists is forbidden.\n\n## Effects relative to your role\nRed suits: hearts/diamonds. Black suits: spades/clubs.\n\n- Same color, different suit: simply play one card.\n- Native (exactly the same suit): choose ONE of changing the next player's role or, if eligible, suppressing that next player.\n- Opposite color: after playing, draw 1 for an odd rank or 2 for an even rank. A is odd. This is mandatory.\n\nChanging the next role affects only the next clockwise player. Choose a different suit with an available role card. Take the first card of that suit from the role deck and return the old role to the end. This does not exchange hands.\n\nSuppression is legal only if the next player's role color, at the instant of play, is opposite to the native main card. That player skips their next entire action and recovers. Suppression does not also change their role, allow a matching-rank response, or stack. The marker belongs to the player and never moves with exchanged hands.\n\nDraw uniformly at random from the shared pool. If insufficient, take all available cards; an empty pool gives zero. The main card is pending and cannot be drawn back during its own effect. Check for victory only after drawing.\n\n## Jokers\nBig Joker: remove it first, then exchange your entire remaining hand with an opponent who has the fewest cards. Choose among tied opponents. Do not exchange roles, seats, turn ownership or suppression markers. The Joker itself is not exchanged. If it was your only card before playing, do not exchange: you win normally.\n\nSmall Joker: remove it, then change your own role to an available different suit using the same role replacement procedure. It grants no additional discard or draw. Even as your last card, complete the role change before checking victory.\n\n## Resolution and information\nChoose a legal main card and all required choices → move it to pending → resolve draw, role change or hand exchange → check victory → recycle the main card → if no winner, advance clockwise, consume suppression skips and check for a new lead.\n\nYou cannot undo after seeing random results. Drawn cards append to the right. Sorting is allowed and does not consume an action or trigger effects. A whole-hand exchange preserves each hand's current order.\n\nHands + pool + pending always contain exactly 42 unique action cards. Active roles + role deck always contain exactly 12 role cards, never mixed with actions. Recent cards and the climbing reference are records, not additional physical piles.\n\nRoles, hand counts, available role counts, pool size, climbing reference, suppression and action logs are public. Opponent hands and the pool's contents are hidden. Local heuristic AI receives only its own hand and public information; reveal-all debugging does not expand its access.\n\n## Version notes\nV3 replaces attached discards with single-card climbing, adds native role-change/conditional next-player suppression, requires odd/even opposite-color draws, and permits sorting. V2 target-any-player suppression and matching-rank responses are removed. Save format remains version 6; old rule saves require their matching old prototype. Language switching changes presentation only. Simulation limits are test timeouts, never a game draw rule.\n";
+  let language='zh';
+  try { if(localStorage.getItem('flower-cards-language')==='en') language='en'; } catch (_) {}
+  const textMemory=new WeakMap(), attrMemory=new WeakMap();
+  const options={subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:['aria-label','title','placeholder']};
+  function value(memory,key,current) {
+    let entry=memory.get(key);
+    if(!entry||current!==entry.shown) entry={original:current,shown:current};
+    entry.shown=language==='en'?english(entry.original):entry.original;
+    memory.set(key,entry);return entry.shown;
+  }
+  function refresh() {
+    observer.disconnect();
+    const walk=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+    let node;
+    while((node=walk.nextNode())) {
+      if(node.parentElement.closest('script,style,textarea,[data-language],#fullRules')) continue;
+      const next=value(textMemory,node,node.nodeValue);if(next!==node.nodeValue)node.nodeValue=next;
+    }
+    document.querySelectorAll('[aria-label],[title],[placeholder]').forEach(el=>{
+      if(el.closest('[data-language]'))return;
+      let memory=attrMemory.get(el);if(!memory){memory=new Map();attrMemory.set(el,memory);}
+      for(const key of ['aria-label','title','placeholder'])if(el.hasAttribute(key)){
+        const current=el.getAttribute(key);let entry=memory.get(key);
+        if(!entry||current!==entry.shown)entry={original:current,shown:current};
+        entry.shown=language==='en'?english(entry.original):entry.original;
+        memory.set(key,entry);if(entry.shown!==current)el.setAttribute(key,entry.shown);
+      }
+    });
+    document.documentElement.lang=language==='en'?'en':'zh-CN';
+    document.title=language==='en'?'Flower Cards · Offline V3.0':'花色纸牌 · 离线试玩 V3.0';
+    const full=document.getElementById('fullRules');
+    if(!full.dataset.zh)full.dataset.zh=full.textContent;
+    full.textContent=language==='en'?fullEnglish:full.dataset.zh;
+    document.querySelectorAll('[data-language]').forEach(b=>{b.textContent=language==='en'?'中文':'EN';b.setAttribute('aria-label',language==='en'?'切换到中文':'Switch to English');});
+    observer.observe(document.body,options);
+  }
+  const observer=new MutationObserver(refresh);
+  document.querySelectorAll('[data-language]').forEach(b=>b.addEventListener('click',()=>{
+    language=language==='en'?'zh':'en';
+    try{localStorage.setItem('flower-cards-language',language);}catch(_){}
+    refresh();
+  }));
+  globalThis.CardLanguage={translate:english,get:()=>language};
+  refresh();
+})();
+
+</script></body>
 </html>
+
