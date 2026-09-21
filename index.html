@@ -1187,6 +1187,7 @@ root.CardRules=Object.freeze({SUITS,CARDS,ACTION_IDS,ROLE_IDS,relation,newGame,v
     ['大王是出牌前唯一手牌：正常弃出，不交换。','The Big Joker was the only card: play it without swapping.'],['此前没有普通牌，王不设置大小限制；下一位可以自由领出普通牌。','No ordinary reference yet. The Joker sets no rank; the next player may lead any ordinary card.'],
     ['红心','Hearts'],['黑桃','Spades'],['方块','Diamonds'],['梅花','Clubs'],['爱情','Love'],['智慧','Wisdom'],['财富','Wealth'],['荣誉','Honor'],['小王','Small Joker'],['大王','Big Joker'],['主牌','Main'],['本命','Native'],['顺色','Same color'],['逆色','Opposite color'],['技能牌','Skill card'],['不能接牌','Cannot beat'],['暂停','Pause'],['继续','Resume'],['单步','Step'],['已暂停','Paused'],['已停止','Stopped'],['已结束','Ended'],['自动','Auto'],['出牌选择','Choose card'],['行动牌','Action cards'],['角色牌','Role cards'],['当前：','Current: '],['种子','Seed'],['阶段','Phase'],['待结算','Pending'],['正在行动','is acting'],['正在选择…','is choosing…'],['获胜',' wins'],['领牌','leads'],['需大于','Beat'],['可用','available'],['在用','in use'],['角色','Role'],['主牌','Main'],['通过','passed'],['失败','failed']
   ];
+  pairs.push(['回合',''],['侍从',' Jack '],['皇后',' Queen '],['国王',' King '],['镜像半身人像','mirrored portrait'],['像素小丑','pixel jester']);
   const exact = new Map(pairs);
   const fragments = pairs.slice().sort((a,b)=>b[0].length-a[0].length);
   const rules = [
