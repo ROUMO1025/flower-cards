@@ -132,6 +132,32 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   .hand-card{width:58px;height:83px}.hand-wrap{flex-basis:58px}.hand{gap:7px;padding-top:9px}
 }
 
+/* Quiet black table. Card artwork and responsive geometry stay unchanged. */
+:root{--bg:#080808;--surface:#151515;--surface2:#202020;--line:#414141;--text:#eeeae1;--muted:#b1b1ac}
+html,body{background:#080808}
+.arena.table-shell{background:#111111;border-color:#363636;box-shadow:0 8px 28px #0006}
+.game-toolbar{background:transparent}
+.game-toolbar h1,.hand-title h2,.action-body h3{color:#eeeae1;text-shadow:none}
+.table-tools button,.quiet-action,.hand-tools button{background:#202020;border-color:#494949;box-shadow:none;color:#deded8}
+.table-tools .help-button{background:#202020;border-color:#777064;box-shadow:none}
+.table-tools button:hover:not(:disabled),.quiet-action:hover:not(:disabled),.hand-tools button:hover:not(:disabled){background:#303030}
+.table-tools .help-button:hover{background:#303030!important}
+.opponent.active{background:#ffffff04;border-color:#c6b584}
+.opponent .meta,.opponent .seat-label .muted,.hand-title .muted,.relation-strip,.card-position,.turn-meta,.role-counts,.role-rack summary,.section-label,.section-label .pill,.settled-card span.small,#pendingNote,.hand-note{color:#bcbab3;text-shadow:none}
+.opponent .seat-label,.pool p,.role-deck>p,.action-body p,.action-body>.turn-prompt{color:#d6d3ca;text-shadow:none}
+.hand{scrollbar-color:#68645a #202020}
+.choice,.compact-choices button{background:#242424;border-color:#595959;box-shadow:none;color:#e6e1d5}
+.choice.selected,.compact-choices button.selected{background:#38352c;border-color:#c7b78b;box-shadow:none}
+.choice:hover:not(:disabled),.compact-choices button:hover:not(:disabled){background:#333333}
+.choice.selected:hover:not(:disabled){background:#444035}
+dialog,.role-popover,.debug-content,.role-suit{background:#181818;border-color:#515151;box-shadow:0 12px 36px #0008}
+.dialog-head,.dialog-footer,.test-output{background:#121212;border-color:#353535}
+dialog::backdrop{background:#000c}
+.player-option{background:#242424;border-color:#535353}
+.player-option.selected{background:#37332a;border-color:#c7b78b}
+.rotate-hint{background:#191919;border-color:#383838}
+.winner-note{background:#24231d;border-color:#c7b78b}
+
 </style>
 </head>
 <body>
